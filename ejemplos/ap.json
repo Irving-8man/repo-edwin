@@ -10,7 +10,7 @@
     "(q0, 'a', 'A')": ["q0", "AA"],
     "(q0, 'b', 'A')": ["q1", "pop"],
     "(q1, 'b', 'A')": ["q1", "pop"],
-    "(q1, 'epsilon', 'Z')": ["q2", "epsilon"]
+    "(q1, 'epsilon', 'Z')": ["q2", "ε"]
   },
   "entrada": "aaabbb"
 }

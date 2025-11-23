@@ -15,18 +15,6 @@ class ModoGLC:
         self.alfabeto = data.get("alfabeto", obtener_alfabeto_default())
         self.max_pasos = 1000  # Este es un límite para evitar recursión infinita
     
-
-    """
-    Intenta derivar la cadena objetivo desde la cadena actual
-    
-    Args:
-        actual: Cadena actual en la derivación
-        objetivo: Cadena objetivo a alcanzar
-        pasos: Contador de pasos para evitar loops infinitos
-        
-    Returns:
-        True si se puede derivar objetivo desde actual, False en caso contrario
-    """
     def derivar(self, actual, objetivo, pasos=0):
         # Si se logro el objetivo
         if actual == objetivo:
