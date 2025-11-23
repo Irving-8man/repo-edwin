@@ -1,0 +1,9 @@
+{
+  "modo": "GRAMATICA_REGULAR",
+  "simbolo_inicial": "S",
+  "producciones": {
+    "S": ["aA"],
+    "A": ["aA", "bA", "b"]
+  },
+  "entrada": "aabab"
+}

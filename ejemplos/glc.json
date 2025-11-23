@@ -1,0 +1,8 @@
+{
+  "modo": "GLC",
+  "simbolo_inicial": "S",
+  "producciones": {
+    "S": ["aSa", "bSb", "a", "b", "epsilon"]
+  },
+  "entrada": "abba"
+}

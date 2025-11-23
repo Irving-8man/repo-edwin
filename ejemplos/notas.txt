@@ -1,0 +1,154 @@
+// ============================================================================
+// ejemplos/afd_ejemplo.json - Autómata Finito Determinista
+// ============================================================================
+// Este AFD acepta cadenas que terminan en "ab"
+{
+  "modo": "AFD",
+  "alfabeto": ["a", "b"],
+  "estados": ["q0", "q1", "q2"],
+  "estado_inicial": "q0",
+  "estados_finales": ["q2"],
+  "transiciones": {
+    "q0": {
+      "a": "q1",
+      "b": "q0"
+    },
+    "q1": {
+      "a": "q1",
+      "b": "q2"
+    },
+    "q2": {
+      "a": "q1",
+      "b": "q0"
+    }
+  },
+  "entrada": "aaab"
+}
+
+// ============================================================================
+// ejemplos/ap_ejemplo.json - Autómata de Pila
+// ============================================================================
+// Este AP reconoce el lenguaje a^n b^n (igual número de a's y b's)
+// OPCIONES PARA EPSILON: "epsilon", "eps", "e", o ""
+{
+  "modo": "AP",
+  "alfabeto": ["a", "b"],
+  "estados": ["q0", "q1", "q2"],
+  "estado_inicial": "q0",
+  "estados_finales": ["q2"],
+  "pila_inicial": "Z",
+  "transiciones": {
+    "(q0, 'a', 'Z')": ["q0", "AZ"],
+    "(q0, 'a', 'A')": ["q0", "AA"],
+    "(q0, 'b', 'A')": ["q1", "pop"],
+    "(q1, 'b', 'A')": ["q1", "pop"],
+    "(q1, 'epsilon', 'Z')": ["q2", "epsilon"]
+  },
+  "entrada": "aaabbb"
+}
+
+// ============================================================================
+// ejemplos/ap_ejemplo2.json - Versión alternativa usando "eps"
+// ============================================================================
+{
+  "modo": "AP",
+  "alfabeto": ["a", "b"],
+  "estados": ["q0", "q1", "q2"],
+  "estado_inicial": "q0",
+  "estados_finales": ["q2"],
+  "pila_inicial": "Z",
+  "transiciones": {
+    "(q0, 'a', 'Z')": ["q0", "AZ"],
+    "(q0, 'a', 'A')": ["q0", "AA"],
+    "(q0, 'b', 'A')": ["q1", "pop"],
+    "(q1, 'b', 'A')": ["q1", "pop"],
+    "(q1, 'eps', 'Z')": ["q2", "eps"]
+  },
+  "entrada": "aabb"
+}
+
+// ============================================================================
+// ejemplos/glc_ejemplo.json - Gramática Libre de Contexto
+// ============================================================================
+// Esta GLC genera palíndromos de a's y b's
+// USA "epsilon" en lugar de ε para evitar problemas de codificación
+{
+  "modo": "GLC",
+  "simbolo_inicial": "S",
+  "producciones": {
+    "S": ["aSa", "bSb", "a", "b", "epsilon"]
+  },
+  "entrada": "abba"
+}
+
+// ============================================================================
+// ejemplos/gramatica_regular_ejemplo.json - Gramática Regular
+// ============================================================================
+// Genera cadenas que empiezan con 'a' y terminan con 'b'
+{
+  "modo": "GRAMATICA_REGULAR",
+  "simbolo_inicial": "S",
+  "producciones": {
+    "S": ["aA"],
+    "A": ["aA", "bA", "b"]
+  },
+  "entrada": "aabab"
+}
+
+// ============================================================================
+// ejemplos/mt_ejemplo.json - Máquina de Turing
+// ============================================================================
+// Esta MT copia una cadena de a's
+{
+  "modo": "MT",
+  "alfabeto": ["a", "b", "_", "X"],
+  "estados": ["q0", "q1", "q2", "q3", "qf"],
+  "estado_inicial": "q0",
+  "estados_finales": ["qf"],
+  "transiciones": {
+    "(q0, 'a')": ["q1", "X", "R"],
+    "(q1, 'a')": ["q1", "a", "R"],
+    "(q1, '_')": ["q2", "_", "R"],
+    "(q2, '_')": ["q3", "a", "L"],
+    "(q3, '_')": ["q3", "_", "L"],
+    "(q3, 'a')": ["q3", "a", "L"],
+    "(q3, 'X')": ["q0", "X", "R"],
+    "(q0, '_')": ["qf", "_", "R"]
+  },
+  "entrada": "aaa"
+}
+
+// ============================================================================
+// NOTAS IMPORTANTES SOBRE LOS ARCHIVOS JSON:
+// ============================================================================
+// 1. Los comentarios (//) NO son válidos en JSON estándar
+//    Elimínalos antes de usar estos archivos
+//
+// 2. Cada archivo debe guardarse por separado en la carpeta ejemplos/
+//
+// 3. Estructura general de cada tipo:
+//
+//    AFD:
+//    - modo: "AFD"
+//    - alfabeto: lista de símbolos permitidos
+//    - estados: lista de estados
+//    - estado_inicial: string con el estado inicial
+//    - estados_finales: lista de estados de aceptación
+//    - transiciones: objeto donde cada estado tiene sus transiciones
+//    - entrada: cadena a procesar
+//
+//    AP:
+//    - modo: "AP"
+//    - transiciones: formato "(estado, símbolo, cima_pila)": [nuevo_estado, acción]
+//    - acción puede ser: "pop", "ε", o símbolos a apilar (ej: "AA")
+//
+//    GLC y GRAMATICA_REGULAR:
+//    - modo: "GLC" o "GRAMATICA_REGULAR"
+//    - simbolo_inicial: no-terminal inicial
+//    - producciones: objeto con listas de producciones por no-terminal
+//
+//    MT:
+//    - modo: "MT"
+//    - transiciones: formato "(estado, símbolo)": [nuevo_estado, escribir, dirección]
+//    - dirección: "L" (izquierda) o "R" (derecha)
+//    - "_" representa espacio en blanco
