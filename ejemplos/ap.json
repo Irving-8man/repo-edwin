@@ -1,18 +1,17 @@
 {
   "modo": "AP",
-  "descripcion": "Autómata de Pila que acepta el lenguaje a^n b^n. L = {ε, ab, aabb, aaabbb, ...}",
-  "alfabeto": ["a", "b"],
+  "descripcion": "AP que reconoce a^n b^n",
   "estados": ["q0", "q1", "q2"],
   "estado_inicial": "q0",
   "estados_finales": ["q2"],
   "pila_inicial": "Z",
-  "max_pasos": 500,
+  "alfabeto": ["a", "b"],
+  "entrada": "aaabbb",
   "transiciones": {
     "(q0, 'a', 'Z')": ["q0", "AZ"],
     "(q0, 'a', 'A')": ["q0", "AA"],
     "(q0, 'b', 'A')": ["q1", "pop"],
     "(q1, 'b', 'A')": ["q1", "pop"],
-    "(q1, 'epsilon', 'Z')": ["q2", "ε"],
-    "(q0, 'epsilon', 'Z')": ["q2", "ε"]
+    "(q1, 'epsilon', 'Z')": ["q2", "ε"]
   }
 }

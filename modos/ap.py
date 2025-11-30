@@ -3,7 +3,7 @@
 Simula un Autómata de Pila (AP)
 
 El AP utiliza una pila para reconocer lenguajes libres de contexto.
-Acepta por estado final (no por pila vacía).
+Acepta por estado final Y entrada completamente consumida.
 """
 
 class ModoAP:
@@ -40,24 +40,20 @@ class ModoAP:
     
     def buscar_transicion(self, estado, simbolo, cima):
         """
-        Busca una transición válida en el siguiente orden de prioridad:
-        1. (estado, símbolo, cima)
-        2. (estado, símbolo, *)
-        3. (estado, epsilon, cima)
-        4. (estado, epsilon, *)
+        Busca una transición válida.
+        Retorna: (nuevo_estado, accion, clave) o None
         """
-        claves = [
-            f"({estado}, '{simbolo}', '{cima}')",
-            f"({estado}, '{simbolo}', '*')",
-            f"({estado}, 'epsilon', '{cima}')",
-            f"({estado}, 'epsilon', '*')",
-            f"({estado}, 'ε', '{cima}')",
-            f"({estado}, 'ε', '*')"
-        ]
+        # Buscar transición exacta primero
+        clave_exacta = f"({estado}, '{simbolo}', '{cima}')"
+        if clave_exacta in self.transiciones:
+            nuevo_estado, accion = self.transiciones[clave_exacta]
+            return (nuevo_estado, accion, clave_exacta)
         
-        for clave in claves:
-            if clave in self.transiciones:
-                return self.transiciones[clave]
+        # Buscar con comodín en cima
+        clave_comodin = f"({estado}, '{simbolo}', '*')"
+        if clave_comodin in self.transiciones:
+            nuevo_estado, accion = self.transiciones[clave_comodin]
+            return (nuevo_estado, accion, clave_comodin)
         
         return None
     
@@ -96,80 +92,93 @@ class ModoAP:
         while pasos < self.max_pasos:
             pasos += 1
             
-            # Determinar símbolo actual
-            if idx < len(self.entrada):
-                simbolo = self.entrada[idx]
-            else:
-                simbolo = "epsilon"
-            
             # Obtener cima de la pila
             cima = pila[-1] if pila else "ε"
             
-            # Buscar transición
-            trans = self.buscar_transicion(estado, simbolo, cima)
-            
-            # Si no hay transición con el símbolo actual, intentar epsilon
-            if not trans and simbolo != "epsilon":
-                trans_epsilon = self.buscar_transicion(estado, "epsilon", cima)
-                if trans_epsilon:
-                    trans = trans_epsilon
-                    simbolo = "epsilon"  # Marcar que usamos transición epsilon
-            
-            # Si aún no hay transición, terminar
-            if not trans:
-                if idx < len(self.entrada):
+            # REGLA CLAVE: Solo usar epsilon si NO hay más entrada
+            if idx < len(self.entrada):
+                # Hay entrada por procesar
+                simbolo = self.entrada[idx]
+                resultado = self.buscar_transicion(estado, simbolo, cima)
+                
+                if resultado is None:
                     print(f"  Paso {pasos}: ❌ No hay transición desde ({estado}, '{simbolo}', '{cima}')")
                     print(f"\n{'─'*70}")
                     print(f"❌ Cadena RECHAZADA (sin transición válida)")
+                    print(f"   Quedaron {len(self.entrada) - idx} símbolos sin procesar: '{self.entrada[idx:]}'")
                     return
-                else:
-                    # Ya no hay entrada, verificar si estamos en estado final
+                
+                nuevo_estado, accion, clave = resultado
+                simbolo_usado = simbolo
+                avanzar = True
+                
+            else:
+                # NO hay más entrada, buscar transición epsilon
+                for eps in ['epsilon', 'ε']:
+                    resultado = self.buscar_transicion(estado, eps, cima)
+                    if resultado:
+                        break
+                
+                if resultado is None:
+                    # No hay transición epsilon, terminamos
                     break
+                
+                nuevo_estado, accion, clave = resultado
+                simbolo_usado = "ε"
+                avanzar = False
             
-            # Aplicar transición
-            nuevo_estado, accion = trans
-            
-            # Hacer POP de la cima
+            # APLICAR TRANSICIÓN A LA PILA
+            # Siempre hacer POP de la cima primero
             if pila:
                 pila.pop()
             
-            # Hacer PUSH según la acción
-            if accion != "pop" and not self.es_epsilon(accion):
-                # Apilar de derecha a izquierda para mantener orden correcto
+            # Luego PUSH según la acción
+            if accion == "pop":
+                # Solo pop, no push nada
+                pass
+            elif not self.es_epsilon(accion):
+                # Push los símbolos en orden inverso (para que queden en orden correcto)
                 for simbolo_pila in reversed(accion):
                     pila.append(simbolo_pila)
+            # Si accion es epsilon, solo hicimos pop
+            
+            # Calcular entrada restante
+            if avanzar:
+                resto = self.entrada[idx + 1:]
+            else:
+                resto = self.entrada[idx:] if idx < len(self.entrada) else ""
             
             # Mostrar paso
-            entrada_restante = self.entrada[idx:] if idx < len(self.entrada) else "ε"
-            simbolo_mostrar = simbolo if simbolo != "epsilon" else "ε"
-            accion_mostrar = accion if not self.es_epsilon(accion) else "ε"
+            acc_show = accion if not self.es_epsilon(accion) else "ε"
             
-            print(f"  Paso {pasos}: δ({estado}, '{simbolo_mostrar}', '{cima}') → ({nuevo_estado}, {accion_mostrar})")
-            print(f"           Configuración: ({nuevo_estado}, '{entrada_restante}', {pila})")
+            print(f"  Paso {pasos}: δ{clave} → ({nuevo_estado}, {acc_show})")
+            print(f"           Configuración: ({nuevo_estado}, '{resto}', {pila})")
             
             # Actualizar estado
             estado = nuevo_estado
             
-            # Avanzar en la entrada solo si NO fue una transición epsilon
-            if simbolo != "epsilon":
+            # Avanzar en la entrada SOLO si consumimos un símbolo real
+            if avanzar:
                 idx += 1
-            
-            # Si terminamos de leer la entrada
-            if idx >= len(self.entrada):
-                # Intentar transiciones epsilon mientras sea posible
-                trans_epsilon = self.buscar_transicion(estado, "epsilon", pila[-1] if pila else "ε")
-                if not trans_epsilon:
-                    break
         
         # Verificar aceptación
         print(f"\n{'─'*70}")
-        print(f"🏁 Configuración final: ({estado}, entrada consumida, {pila})")
+        print(f"🏁 Configuración final: ({estado}, '{self.entrada[idx:]}', {pila})")
+        print(f"🔍 Símbolos procesados: {idx}/{len(self.entrada)}")
         print(f"{'─'*70}")
         
-        if estado in self.estados_finales:
+        # CRITERIO DE ACEPTACIÓN: 
+        # 1. Estado final
+        # 2. TODA la entrada consumida
+        if estado in self.estados_finales and idx == len(self.entrada):
             print("✅ Cadena ACEPTADA ✅")
-        else:
+        elif estado not in self.estados_finales:
             print(f"❌ Cadena RECHAZADA (estado '{estado}' no es final)")
+        elif idx < len(self.entrada):
+            simbolos_restantes = len(self.entrada) - idx
+            print(f"❌ Cadena RECHAZADA (quedan {simbolos_restantes} símbolos sin procesar: '{self.entrada[idx:]}')")
+        else:
+            print("❌ Cadena RECHAZADA")
         
         if pasos >= self.max_pasos:
             print(f"⚠️  Advertencia: Se alcanzó el límite de {self.max_pasos} pasos")

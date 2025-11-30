@@ -110,47 +110,41 @@ Gramatica Regular
 AP 
 {
   "modo": "AP",
-  "descripcion": "Autómata de Pila que acepta palíndromos impares sobre {a,b}. L = {a, b, aba, bab, aabaa, ...}",
-  "alfabeto": ["a", "b"],
-  "estados": ["q0", "q1", "q2"],
+  "descripcion": "Autómata de Pila que verifica PARÉNTESIS BALANCEADOS. Lenguaje: L = {(), (()), ()(), (()()), ...}",
+  "alfabeto": ["(", ")"],
+  "estados": ["q0", "q1"],
   "estado_inicial": "q0",
-  "estados_finales": ["q2"],
+  "estados_finales": ["q1"],
   "pila_inicial": "Z",
   "max_pasos": 500,
   "transiciones": {
-    "(q0, 'a', 'Z')": ["q0", "AZ"],
-    "(q0, 'a', 'A')": ["q0", "AA"],
-    "(q0, 'a', 'B')": ["q0", "AB"],
-    "(q0, 'b', 'Z')": ["q0", "BZ"],
-    "(q0, 'b', 'A')": ["q0", "BA"],
-    "(q0, 'b', 'B')": ["q0", "BB"],
-    "(q0, 'a', '*')": ["q1", "pop"],
-    "(q0, 'b', '*')": ["q1", "pop"],
-    "(q1, 'a', 'A')": ["q1", "pop"],
-    "(q1, 'b', 'B')": ["q1", "pop"],
-    "(q1, 'epsilon', 'Z')": ["q2", "ε"]
+    "(q0, '(', 'Z')": ["q0", "XZ"],
+    "(q0, '(', 'X')": ["q0", "XX"],
+    "(q0, ')', 'X')": ["q0", "pop"],
+    "(q0, 'epsilon', 'Z')": ["q1", "ε"]
   }
 }
 
 
 {
   "modo": "AP",
-  "descripcion": "Autómata de Pila que acepta el lenguaje a^n b^n. L = {ε, ab, aabb, aaabbb, ...}",
-  "alfabeto": ["a", "b"],
+  "descripcion": "AP que reconoce a^n b^n",
   "estados": ["q0", "q1", "q2"],
   "estado_inicial": "q0",
   "estados_finales": ["q2"],
   "pila_inicial": "Z",
-  "max_pasos": 500,
+  "alfabeto": ["a", "b"],
+  "entrada": "aaabbb",
   "transiciones": {
     "(q0, 'a', 'Z')": ["q0", "AZ"],
     "(q0, 'a', 'A')": ["q0", "AA"],
     "(q0, 'b', 'A')": ["q1", "pop"],
     "(q1, 'b', 'A')": ["q1", "pop"],
-    "(q1, 'epsilon', 'Z')": ["q2", "ε"],
-    "(q0, 'epsilon', 'Z')": ["q2", "ε"]
+    "(q1, 'epsilon', 'Z')": ["q2", "ε"]
   }
 }
+
+
 
 
 
