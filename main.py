@@ -11,117 +11,126 @@ Este programa permite simular diferentes modelos de computación:
 USO:
 1. Coloca archivos JSON en la carpeta ejemplos
 2. Ejecuta este script
-3. Selecciona el archivo a procesar
+3. Selecciona la configuración
+4. Ingresa la cadena a validar
 """
 
 import json
 import os
 from modos.afd import ModoAFD
-from modos.gramatica_regular import ModoGramaticaRegular
 from modos.glc import ModoGLC
+from modos.gramatica_regular import ModoGramaticaRegular
 from modos.ap import ModoAP
 from modos.mt import ModoMT
 
-
-"""
-Carga y ejecuta un archivo JSON con la configuración del autómata
-
-Args:
-nombre_archivo: Nombre del archivo JSON en la carpeta "ejemplos"
-"""
 def ejecutar_archivo(nombre_archivo):
     ruta = os.path.join("ejemplos", nombre_archivo)
     
     # Verificar que el archivo existe
     if not os.path.isfile(ruta):
-        print(f"El archivo '{nombre_archivo}' no existe en la carpeta 'ejemplos/'.")
-        return
+        print(f"❌ El archivo '{nombre_archivo}' no existe en la carpeta 'ejemplos/'.")
+        return False
     
     try:
         with open(ruta, 'r', encoding='utf-8') as archivo:
             data = json.load(archivo)
     except json.JSONDecodeError as e:
-        print(f"Error al leer el JSON: {e}")
-        return
+        print(f"❌ Error al leer el JSON: {e}")
+        return False
     except Exception as e:
-        print(f"Error inesperado: {e}")
-        return
+        print(f"❌ Error inesperado: {e}")
+        return False
     
-    # Identificando el modo de
+    # Identificar el modo
     modo = data.get("modo", "").upper()
+    print(f"\n{'='*50}")
+    print(f"Modo: {modo}")
+    print(f"Configuración: {nombre_archivo}")
+    print(f"{'='*50}")
     
-    # Seleccion del modo y pasando la data del JSON
-    if modo == "AFD":
-        simulador = ModoAFD(data)
-    elif modo == "GRAMATICA_REGULAR":
-        simulador = ModoGramaticaRegular(data)
-    elif modo == "GLC":
-        simulador = ModoGLC(data)
-    elif modo == "AP":
-        simulador = ModoAP(data)
-    elif modo == "MT":
-        simulador = ModoMT(data)
-    else:
-        print(f"Modo '{modo}' no reconocido. Modos válidos: AFD, GRAMATICA_REGULAR, GLC, AP, MT")
-        return
-    
-    # Ejecutar la simulación
-    print("\n")
-    print(f"Ejecutando modo: {modo}")
-    simulador.ejecutar()
-
-
-
-
-def main():
-
+    # Bucle para procesar múltiples entradas con la misma configuración
     while True:
         print("\n")
-        print("=== SIMULADOR DE MODELOS DE COMPUTACIÓN ===")
+        entrada = input("Ingresa la cadena a validar (o 'salir' para cambiar configuración): ").strip()
         
-        # Comprobando que existe la carpeta ejemplos
-        if not os.path.exists("ejemplos"):
-            print("No existe la carpeta 'ejemplos/'. Créala y añade archivos JSON.")
-            break
+        if entrada.lower() == 'salir':
+            return True
         
-        # Mostrando los JSON disponibles
+        # Agregar la entrada al diccionario de datos
+        data["entrada"] = entrada
+        
+        # Selección del modo y creación del simulador
+        if modo == "AFD":
+            simulador = ModoAFD(data)
+        elif modo == "GLC":
+            simulador = ModoGLC(data)
+        elif modo == "GRAMATICA_REGULAR":
+            simulador = ModoGramaticaRegular(data)
+        elif modo == "AP":
+            simulador = ModoAP(data)
+        elif modo == "MT":
+            simulador = ModoMT(data)
+        else:
+            print(f"❌ Modo '{modo}' no reconocido. Modos válidos: AFD, GLC, GRAMATICA_REGULAR, AP, MT")
+            return False
+        
+        # Ejecutar la simulación
+        try:
+            simulador.ejecutar()
+        except Exception as e:
+            print(f"❌ Error durante la simulación: {e}")
+        
+        print("\n" + "-"*50)
+
+def main():
+    print("\n")
+    print("╔════════════════════════════════════════════════╗")
+    print("║  SIMULADOR DE MODELOS DE COMPUTACIÓN          ║")
+    print("╚════════════════════════════════════════════════╝")
+    
+    # Comprobar que existe la carpeta ejemplos
+    if not os.path.exists("ejemplos"):
+        print("\n❌ No existe la carpeta 'ejemplos/'. Créala y añade archivos JSON.")
+        return
+    
+    while True:
+        # Mostrar los JSON disponibles
         archivos = [f for f in os.listdir("ejemplos") if f.endswith(".json")]
         
         if not archivos:
-            print("No hay archivos JSON en la carpeta ejemplos")
+            print("\n❌ No hay archivos JSON en la carpeta 'ejemplos/'")
             break
         
-        print("\nArchivos disponibles:")
+        print("\n📁 Configuraciones disponibles:")
         for i, archivo in enumerate(archivos, 1):
             print(f"  {i}. {archivo}")
+        print(f"  0. Salir del programa")
         
-        nombre_archivo = input("\nIngrese el nombre del archivo JSON: ").strip()
+        print("\n")
+        seleccion = input("Selecciona una configuración (número o nombre): ").strip()
         
-        # Permitir que seleccione un modo
-        if nombre_archivo.isdigit():
-            idx = int(nombre_archivo) - 1
+        # Opción de salir
+        if seleccion == "0":
+            print("\n👋 Saliendo del simulador...")
+            break
+        
+        # Permitir selección por número o nombre
+        if seleccion.isdigit():
+            idx = int(seleccion) - 1
             if 0 <= idx < len(archivos):
                 nombre_archivo = archivos[idx]
             else:
-                print("Número inválido.")
+                print("❌ Número inválido.")
                 continue
+        else:
+            nombre_archivo = seleccion if seleccion.endswith(".json") else f"{seleccion}.json"
         
-        # Ejecutando el archivo
-        ejecutar_archivo(nombre_archivo)
-
-
-        print("\n")
-        print("¿Desea procesar otro archivo?")
-        print("1. Sí")
-        print("2. No (salir)")
-        opcion = input("Seleccione una opción: ").strip()
+        # Ejecutar el archivo
+        continuar = ejecutar_archivo(nombre_archivo)
         
-        if opcion != "1":
-            print("\nSaliendo del simulador...")
+        if not continuar:
             break
 
-
-
-#Ejecution principal para evitar problemas
+# Ejecución principal
 if __name__ == "__main__":
     main()

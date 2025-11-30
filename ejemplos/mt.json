@@ -1,18 +1,7931 @@
 {
   "modo": "MT",
-  "alfabeto": ["a", "b", "_", "X"],
-  "estados": ["q0", "q1", "q2", "q3", "qf"],
+  "descripcion": "Reconoce pal\u00edndromos con alfabeto a-z",
+  "estados": [
+    "q0",
+    "q_seek_end",
+    "q_back",
+    "qf",
+    "qr",
+    "q_mark_a",
+    "q_mark_b",
+    "q_mark_c",
+    "q_mark_d",
+    "q_mark_e",
+    "q_mark_f",
+    "q_mark_g",
+    "q_mark_h",
+    "q_mark_i",
+    "q_mark_j",
+    "q_mark_k",
+    "q_mark_l",
+    "q_mark_m",
+    "q_mark_n",
+    "q_mark_o",
+    "q_mark_p",
+    "q_mark_q",
+    "q_mark_r",
+    "q_mark_s",
+    "q_mark_t",
+    "q_mark_u",
+    "q_mark_v",
+    "q_mark_w",
+    "q_mark_x",
+    "q_mark_y",
+    "q_mark_z",
+    "q_check_a",
+    "q_check_b",
+    "q_check_c",
+    "q_check_d",
+    "q_check_e",
+    "q_check_f",
+    "q_check_g",
+    "q_check_h",
+    "q_check_i",
+    "q_check_j",
+    "q_check_k",
+    "q_check_l",
+    "q_check_m",
+    "q_check_n",
+    "q_check_o",
+    "q_check_p",
+    "q_check_q",
+    "q_check_r",
+    "q_check_s",
+    "q_check_t",
+    "q_check_u",
+    "q_check_v",
+    "q_check_w",
+    "q_check_x",
+    "q_check_y",
+    "q_check_z"
+  ],
+  "alfabeto": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "X",
+    "Y"
+  ],
+  "simbolo_blanco": "_",
   "estado_inicial": "q0",
-  "estados_finales": ["qf"],
+  "estados_finales": [
+    "qf"
+  ],
+  "max_pasos": 5000,
   "transiciones": {
-    "(q0, 'a')": ["q1", "X", "R"],
-    "(q1, 'a')": ["q1", "a", "R"],
-    "(q1, '_')": ["q2", "_", "R"],
-    "(q2, '_')": ["q3", "a", "L"],
-    "(q3, '_')": ["q3", "_", "L"],
-    "(q3, 'a')": ["q3", "a", "L"],
-    "(q3, 'X')": ["q0", "X", "R"],
-    "(q0, '_')": ["qf", "_", "R"]
-  },
-  "entrada": "aaa"
+    "( q0, 'a' )": [
+      "q_mark_a",
+      "X",
+      "R"
+    ],
+    "( q0, 'b' )": [
+      "q_mark_b",
+      "X",
+      "R"
+    ],
+    "( q0, 'c' )": [
+      "q_mark_c",
+      "X",
+      "R"
+    ],
+    "( q0, 'd' )": [
+      "q_mark_d",
+      "X",
+      "R"
+    ],
+    "( q0, 'e' )": [
+      "q_mark_e",
+      "X",
+      "R"
+    ],
+    "( q0, 'f' )": [
+      "q_mark_f",
+      "X",
+      "R"
+    ],
+    "( q0, 'g' )": [
+      "q_mark_g",
+      "X",
+      "R"
+    ],
+    "( q0, 'h' )": [
+      "q_mark_h",
+      "X",
+      "R"
+    ],
+    "( q0, 'i' )": [
+      "q_mark_i",
+      "X",
+      "R"
+    ],
+    "( q0, 'j' )": [
+      "q_mark_j",
+      "X",
+      "R"
+    ],
+    "( q0, 'k' )": [
+      "q_mark_k",
+      "X",
+      "R"
+    ],
+    "( q0, 'l' )": [
+      "q_mark_l",
+      "X",
+      "R"
+    ],
+    "( q0, 'm' )": [
+      "q_mark_m",
+      "X",
+      "R"
+    ],
+    "( q0, 'n' )": [
+      "q_mark_n",
+      "X",
+      "R"
+    ],
+    "( q0, 'o' )": [
+      "q_mark_o",
+      "X",
+      "R"
+    ],
+    "( q0, 'p' )": [
+      "q_mark_p",
+      "X",
+      "R"
+    ],
+    "( q0, 'q' )": [
+      "q_mark_q",
+      "X",
+      "R"
+    ],
+    "( q0, 'r' )": [
+      "q_mark_r",
+      "X",
+      "R"
+    ],
+    "( q0, 's' )": [
+      "q_mark_s",
+      "X",
+      "R"
+    ],
+    "( q0, 't' )": [
+      "q_mark_t",
+      "X",
+      "R"
+    ],
+    "( q0, 'u' )": [
+      "q_mark_u",
+      "X",
+      "R"
+    ],
+    "( q0, 'v' )": [
+      "q_mark_v",
+      "X",
+      "R"
+    ],
+    "( q0, 'w' )": [
+      "q_mark_w",
+      "X",
+      "R"
+    ],
+    "( q0, 'x' )": [
+      "q_mark_x",
+      "X",
+      "R"
+    ],
+    "( q0, 'y' )": [
+      "q_mark_y",
+      "X",
+      "R"
+    ],
+    "( q0, 'z' )": [
+      "q_mark_z",
+      "X",
+      "R"
+    ],
+    "( q0, 'X' )": [
+      "q0",
+      "X",
+      "R"
+    ],
+    "( q0, 'Y' )": [
+      "q0",
+      "Y",
+      "R"
+    ],
+    "( q0, '_' )": [
+      "qf",
+      "_",
+      "S"
+    ],
+    "( q_mark_a, 'a' )": [
+      "q_mark_a",
+      "a",
+      "R"
+    ],
+    "( q_mark_a, 'b' )": [
+      "q_mark_a",
+      "b",
+      "R"
+    ],
+    "( q_mark_a, 'c' )": [
+      "q_mark_a",
+      "c",
+      "R"
+    ],
+    "( q_mark_a, 'd' )": [
+      "q_mark_a",
+      "d",
+      "R"
+    ],
+    "( q_mark_a, 'e' )": [
+      "q_mark_a",
+      "e",
+      "R"
+    ],
+    "( q_mark_a, 'f' )": [
+      "q_mark_a",
+      "f",
+      "R"
+    ],
+    "( q_mark_a, 'g' )": [
+      "q_mark_a",
+      "g",
+      "R"
+    ],
+    "( q_mark_a, 'h' )": [
+      "q_mark_a",
+      "h",
+      "R"
+    ],
+    "( q_mark_a, 'i' )": [
+      "q_mark_a",
+      "i",
+      "R"
+    ],
+    "( q_mark_a, 'j' )": [
+      "q_mark_a",
+      "j",
+      "R"
+    ],
+    "( q_mark_a, 'k' )": [
+      "q_mark_a",
+      "k",
+      "R"
+    ],
+    "( q_mark_a, 'l' )": [
+      "q_mark_a",
+      "l",
+      "R"
+    ],
+    "( q_mark_a, 'm' )": [
+      "q_mark_a",
+      "m",
+      "R"
+    ],
+    "( q_mark_a, 'n' )": [
+      "q_mark_a",
+      "n",
+      "R"
+    ],
+    "( q_mark_a, 'o' )": [
+      "q_mark_a",
+      "o",
+      "R"
+    ],
+    "( q_mark_a, 'p' )": [
+      "q_mark_a",
+      "p",
+      "R"
+    ],
+    "( q_mark_a, 'q' )": [
+      "q_mark_a",
+      "q",
+      "R"
+    ],
+    "( q_mark_a, 'r' )": [
+      "q_mark_a",
+      "r",
+      "R"
+    ],
+    "( q_mark_a, 's' )": [
+      "q_mark_a",
+      "s",
+      "R"
+    ],
+    "( q_mark_a, 't' )": [
+      "q_mark_a",
+      "t",
+      "R"
+    ],
+    "( q_mark_a, 'u' )": [
+      "q_mark_a",
+      "u",
+      "R"
+    ],
+    "( q_mark_a, 'v' )": [
+      "q_mark_a",
+      "v",
+      "R"
+    ],
+    "( q_mark_a, 'w' )": [
+      "q_mark_a",
+      "w",
+      "R"
+    ],
+    "( q_mark_a, 'x' )": [
+      "q_mark_a",
+      "x",
+      "R"
+    ],
+    "( q_mark_a, 'y' )": [
+      "q_mark_a",
+      "y",
+      "R"
+    ],
+    "( q_mark_a, 'z' )": [
+      "q_mark_a",
+      "z",
+      "R"
+    ],
+    "( q_mark_a, 'X' )": [
+      "q_mark_a",
+      "X",
+      "R"
+    ],
+    "( q_mark_a, 'Y' )": [
+      "q_mark_a",
+      "Y",
+      "R"
+    ],
+    "( q_mark_a, '_' )": [
+      "q_check_a",
+      "_",
+      "L"
+    ],
+    "( q_mark_b, 'a' )": [
+      "q_mark_b",
+      "a",
+      "R"
+    ],
+    "( q_mark_b, 'b' )": [
+      "q_mark_b",
+      "b",
+      "R"
+    ],
+    "( q_mark_b, 'c' )": [
+      "q_mark_b",
+      "c",
+      "R"
+    ],
+    "( q_mark_b, 'd' )": [
+      "q_mark_b",
+      "d",
+      "R"
+    ],
+    "( q_mark_b, 'e' )": [
+      "q_mark_b",
+      "e",
+      "R"
+    ],
+    "( q_mark_b, 'f' )": [
+      "q_mark_b",
+      "f",
+      "R"
+    ],
+    "( q_mark_b, 'g' )": [
+      "q_mark_b",
+      "g",
+      "R"
+    ],
+    "( q_mark_b, 'h' )": [
+      "q_mark_b",
+      "h",
+      "R"
+    ],
+    "( q_mark_b, 'i' )": [
+      "q_mark_b",
+      "i",
+      "R"
+    ],
+    "( q_mark_b, 'j' )": [
+      "q_mark_b",
+      "j",
+      "R"
+    ],
+    "( q_mark_b, 'k' )": [
+      "q_mark_b",
+      "k",
+      "R"
+    ],
+    "( q_mark_b, 'l' )": [
+      "q_mark_b",
+      "l",
+      "R"
+    ],
+    "( q_mark_b, 'm' )": [
+      "q_mark_b",
+      "m",
+      "R"
+    ],
+    "( q_mark_b, 'n' )": [
+      "q_mark_b",
+      "n",
+      "R"
+    ],
+    "( q_mark_b, 'o' )": [
+      "q_mark_b",
+      "o",
+      "R"
+    ],
+    "( q_mark_b, 'p' )": [
+      "q_mark_b",
+      "p",
+      "R"
+    ],
+    "( q_mark_b, 'q' )": [
+      "q_mark_b",
+      "q",
+      "R"
+    ],
+    "( q_mark_b, 'r' )": [
+      "q_mark_b",
+      "r",
+      "R"
+    ],
+    "( q_mark_b, 's' )": [
+      "q_mark_b",
+      "s",
+      "R"
+    ],
+    "( q_mark_b, 't' )": [
+      "q_mark_b",
+      "t",
+      "R"
+    ],
+    "( q_mark_b, 'u' )": [
+      "q_mark_b",
+      "u",
+      "R"
+    ],
+    "( q_mark_b, 'v' )": [
+      "q_mark_b",
+      "v",
+      "R"
+    ],
+    "( q_mark_b, 'w' )": [
+      "q_mark_b",
+      "w",
+      "R"
+    ],
+    "( q_mark_b, 'x' )": [
+      "q_mark_b",
+      "x",
+      "R"
+    ],
+    "( q_mark_b, 'y' )": [
+      "q_mark_b",
+      "y",
+      "R"
+    ],
+    "( q_mark_b, 'z' )": [
+      "q_mark_b",
+      "z",
+      "R"
+    ],
+    "( q_mark_b, 'X' )": [
+      "q_mark_b",
+      "X",
+      "R"
+    ],
+    "( q_mark_b, 'Y' )": [
+      "q_mark_b",
+      "Y",
+      "R"
+    ],
+    "( q_mark_b, '_' )": [
+      "q_check_b",
+      "_",
+      "L"
+    ],
+    "( q_mark_c, 'a' )": [
+      "q_mark_c",
+      "a",
+      "R"
+    ],
+    "( q_mark_c, 'b' )": [
+      "q_mark_c",
+      "b",
+      "R"
+    ],
+    "( q_mark_c, 'c' )": [
+      "q_mark_c",
+      "c",
+      "R"
+    ],
+    "( q_mark_c, 'd' )": [
+      "q_mark_c",
+      "d",
+      "R"
+    ],
+    "( q_mark_c, 'e' )": [
+      "q_mark_c",
+      "e",
+      "R"
+    ],
+    "( q_mark_c, 'f' )": [
+      "q_mark_c",
+      "f",
+      "R"
+    ],
+    "( q_mark_c, 'g' )": [
+      "q_mark_c",
+      "g",
+      "R"
+    ],
+    "( q_mark_c, 'h' )": [
+      "q_mark_c",
+      "h",
+      "R"
+    ],
+    "( q_mark_c, 'i' )": [
+      "q_mark_c",
+      "i",
+      "R"
+    ],
+    "( q_mark_c, 'j' )": [
+      "q_mark_c",
+      "j",
+      "R"
+    ],
+    "( q_mark_c, 'k' )": [
+      "q_mark_c",
+      "k",
+      "R"
+    ],
+    "( q_mark_c, 'l' )": [
+      "q_mark_c",
+      "l",
+      "R"
+    ],
+    "( q_mark_c, 'm' )": [
+      "q_mark_c",
+      "m",
+      "R"
+    ],
+    "( q_mark_c, 'n' )": [
+      "q_mark_c",
+      "n",
+      "R"
+    ],
+    "( q_mark_c, 'o' )": [
+      "q_mark_c",
+      "o",
+      "R"
+    ],
+    "( q_mark_c, 'p' )": [
+      "q_mark_c",
+      "p",
+      "R"
+    ],
+    "( q_mark_c, 'q' )": [
+      "q_mark_c",
+      "q",
+      "R"
+    ],
+    "( q_mark_c, 'r' )": [
+      "q_mark_c",
+      "r",
+      "R"
+    ],
+    "( q_mark_c, 's' )": [
+      "q_mark_c",
+      "s",
+      "R"
+    ],
+    "( q_mark_c, 't' )": [
+      "q_mark_c",
+      "t",
+      "R"
+    ],
+    "( q_mark_c, 'u' )": [
+      "q_mark_c",
+      "u",
+      "R"
+    ],
+    "( q_mark_c, 'v' )": [
+      "q_mark_c",
+      "v",
+      "R"
+    ],
+    "( q_mark_c, 'w' )": [
+      "q_mark_c",
+      "w",
+      "R"
+    ],
+    "( q_mark_c, 'x' )": [
+      "q_mark_c",
+      "x",
+      "R"
+    ],
+    "( q_mark_c, 'y' )": [
+      "q_mark_c",
+      "y",
+      "R"
+    ],
+    "( q_mark_c, 'z' )": [
+      "q_mark_c",
+      "z",
+      "R"
+    ],
+    "( q_mark_c, 'X' )": [
+      "q_mark_c",
+      "X",
+      "R"
+    ],
+    "( q_mark_c, 'Y' )": [
+      "q_mark_c",
+      "Y",
+      "R"
+    ],
+    "( q_mark_c, '_' )": [
+      "q_check_c",
+      "_",
+      "L"
+    ],
+    "( q_mark_d, 'a' )": [
+      "q_mark_d",
+      "a",
+      "R"
+    ],
+    "( q_mark_d, 'b' )": [
+      "q_mark_d",
+      "b",
+      "R"
+    ],
+    "( q_mark_d, 'c' )": [
+      "q_mark_d",
+      "c",
+      "R"
+    ],
+    "( q_mark_d, 'd' )": [
+      "q_mark_d",
+      "d",
+      "R"
+    ],
+    "( q_mark_d, 'e' )": [
+      "q_mark_d",
+      "e",
+      "R"
+    ],
+    "( q_mark_d, 'f' )": [
+      "q_mark_d",
+      "f",
+      "R"
+    ],
+    "( q_mark_d, 'g' )": [
+      "q_mark_d",
+      "g",
+      "R"
+    ],
+    "( q_mark_d, 'h' )": [
+      "q_mark_d",
+      "h",
+      "R"
+    ],
+    "( q_mark_d, 'i' )": [
+      "q_mark_d",
+      "i",
+      "R"
+    ],
+    "( q_mark_d, 'j' )": [
+      "q_mark_d",
+      "j",
+      "R"
+    ],
+    "( q_mark_d, 'k' )": [
+      "q_mark_d",
+      "k",
+      "R"
+    ],
+    "( q_mark_d, 'l' )": [
+      "q_mark_d",
+      "l",
+      "R"
+    ],
+    "( q_mark_d, 'm' )": [
+      "q_mark_d",
+      "m",
+      "R"
+    ],
+    "( q_mark_d, 'n' )": [
+      "q_mark_d",
+      "n",
+      "R"
+    ],
+    "( q_mark_d, 'o' )": [
+      "q_mark_d",
+      "o",
+      "R"
+    ],
+    "( q_mark_d, 'p' )": [
+      "q_mark_d",
+      "p",
+      "R"
+    ],
+    "( q_mark_d, 'q' )": [
+      "q_mark_d",
+      "q",
+      "R"
+    ],
+    "( q_mark_d, 'r' )": [
+      "q_mark_d",
+      "r",
+      "R"
+    ],
+    "( q_mark_d, 's' )": [
+      "q_mark_d",
+      "s",
+      "R"
+    ],
+    "( q_mark_d, 't' )": [
+      "q_mark_d",
+      "t",
+      "R"
+    ],
+    "( q_mark_d, 'u' )": [
+      "q_mark_d",
+      "u",
+      "R"
+    ],
+    "( q_mark_d, 'v' )": [
+      "q_mark_d",
+      "v",
+      "R"
+    ],
+    "( q_mark_d, 'w' )": [
+      "q_mark_d",
+      "w",
+      "R"
+    ],
+    "( q_mark_d, 'x' )": [
+      "q_mark_d",
+      "x",
+      "R"
+    ],
+    "( q_mark_d, 'y' )": [
+      "q_mark_d",
+      "y",
+      "R"
+    ],
+    "( q_mark_d, 'z' )": [
+      "q_mark_d",
+      "z",
+      "R"
+    ],
+    "( q_mark_d, 'X' )": [
+      "q_mark_d",
+      "X",
+      "R"
+    ],
+    "( q_mark_d, 'Y' )": [
+      "q_mark_d",
+      "Y",
+      "R"
+    ],
+    "( q_mark_d, '_' )": [
+      "q_check_d",
+      "_",
+      "L"
+    ],
+    "( q_mark_e, 'a' )": [
+      "q_mark_e",
+      "a",
+      "R"
+    ],
+    "( q_mark_e, 'b' )": [
+      "q_mark_e",
+      "b",
+      "R"
+    ],
+    "( q_mark_e, 'c' )": [
+      "q_mark_e",
+      "c",
+      "R"
+    ],
+    "( q_mark_e, 'd' )": [
+      "q_mark_e",
+      "d",
+      "R"
+    ],
+    "( q_mark_e, 'e' )": [
+      "q_mark_e",
+      "e",
+      "R"
+    ],
+    "( q_mark_e, 'f' )": [
+      "q_mark_e",
+      "f",
+      "R"
+    ],
+    "( q_mark_e, 'g' )": [
+      "q_mark_e",
+      "g",
+      "R"
+    ],
+    "( q_mark_e, 'h' )": [
+      "q_mark_e",
+      "h",
+      "R"
+    ],
+    "( q_mark_e, 'i' )": [
+      "q_mark_e",
+      "i",
+      "R"
+    ],
+    "( q_mark_e, 'j' )": [
+      "q_mark_e",
+      "j",
+      "R"
+    ],
+    "( q_mark_e, 'k' )": [
+      "q_mark_e",
+      "k",
+      "R"
+    ],
+    "( q_mark_e, 'l' )": [
+      "q_mark_e",
+      "l",
+      "R"
+    ],
+    "( q_mark_e, 'm' )": [
+      "q_mark_e",
+      "m",
+      "R"
+    ],
+    "( q_mark_e, 'n' )": [
+      "q_mark_e",
+      "n",
+      "R"
+    ],
+    "( q_mark_e, 'o' )": [
+      "q_mark_e",
+      "o",
+      "R"
+    ],
+    "( q_mark_e, 'p' )": [
+      "q_mark_e",
+      "p",
+      "R"
+    ],
+    "( q_mark_e, 'q' )": [
+      "q_mark_e",
+      "q",
+      "R"
+    ],
+    "( q_mark_e, 'r' )": [
+      "q_mark_e",
+      "r",
+      "R"
+    ],
+    "( q_mark_e, 's' )": [
+      "q_mark_e",
+      "s",
+      "R"
+    ],
+    "( q_mark_e, 't' )": [
+      "q_mark_e",
+      "t",
+      "R"
+    ],
+    "( q_mark_e, 'u' )": [
+      "q_mark_e",
+      "u",
+      "R"
+    ],
+    "( q_mark_e, 'v' )": [
+      "q_mark_e",
+      "v",
+      "R"
+    ],
+    "( q_mark_e, 'w' )": [
+      "q_mark_e",
+      "w",
+      "R"
+    ],
+    "( q_mark_e, 'x' )": [
+      "q_mark_e",
+      "x",
+      "R"
+    ],
+    "( q_mark_e, 'y' )": [
+      "q_mark_e",
+      "y",
+      "R"
+    ],
+    "( q_mark_e, 'z' )": [
+      "q_mark_e",
+      "z",
+      "R"
+    ],
+    "( q_mark_e, 'X' )": [
+      "q_mark_e",
+      "X",
+      "R"
+    ],
+    "( q_mark_e, 'Y' )": [
+      "q_mark_e",
+      "Y",
+      "R"
+    ],
+    "( q_mark_e, '_' )": [
+      "q_check_e",
+      "_",
+      "L"
+    ],
+    "( q_mark_f, 'a' )": [
+      "q_mark_f",
+      "a",
+      "R"
+    ],
+    "( q_mark_f, 'b' )": [
+      "q_mark_f",
+      "b",
+      "R"
+    ],
+    "( q_mark_f, 'c' )": [
+      "q_mark_f",
+      "c",
+      "R"
+    ],
+    "( q_mark_f, 'd' )": [
+      "q_mark_f",
+      "d",
+      "R"
+    ],
+    "( q_mark_f, 'e' )": [
+      "q_mark_f",
+      "e",
+      "R"
+    ],
+    "( q_mark_f, 'f' )": [
+      "q_mark_f",
+      "f",
+      "R"
+    ],
+    "( q_mark_f, 'g' )": [
+      "q_mark_f",
+      "g",
+      "R"
+    ],
+    "( q_mark_f, 'h' )": [
+      "q_mark_f",
+      "h",
+      "R"
+    ],
+    "( q_mark_f, 'i' )": [
+      "q_mark_f",
+      "i",
+      "R"
+    ],
+    "( q_mark_f, 'j' )": [
+      "q_mark_f",
+      "j",
+      "R"
+    ],
+    "( q_mark_f, 'k' )": [
+      "q_mark_f",
+      "k",
+      "R"
+    ],
+    "( q_mark_f, 'l' )": [
+      "q_mark_f",
+      "l",
+      "R"
+    ],
+    "( q_mark_f, 'm' )": [
+      "q_mark_f",
+      "m",
+      "R"
+    ],
+    "( q_mark_f, 'n' )": [
+      "q_mark_f",
+      "n",
+      "R"
+    ],
+    "( q_mark_f, 'o' )": [
+      "q_mark_f",
+      "o",
+      "R"
+    ],
+    "( q_mark_f, 'p' )": [
+      "q_mark_f",
+      "p",
+      "R"
+    ],
+    "( q_mark_f, 'q' )": [
+      "q_mark_f",
+      "q",
+      "R"
+    ],
+    "( q_mark_f, 'r' )": [
+      "q_mark_f",
+      "r",
+      "R"
+    ],
+    "( q_mark_f, 's' )": [
+      "q_mark_f",
+      "s",
+      "R"
+    ],
+    "( q_mark_f, 't' )": [
+      "q_mark_f",
+      "t",
+      "R"
+    ],
+    "( q_mark_f, 'u' )": [
+      "q_mark_f",
+      "u",
+      "R"
+    ],
+    "( q_mark_f, 'v' )": [
+      "q_mark_f",
+      "v",
+      "R"
+    ],
+    "( q_mark_f, 'w' )": [
+      "q_mark_f",
+      "w",
+      "R"
+    ],
+    "( q_mark_f, 'x' )": [
+      "q_mark_f",
+      "x",
+      "R"
+    ],
+    "( q_mark_f, 'y' )": [
+      "q_mark_f",
+      "y",
+      "R"
+    ],
+    "( q_mark_f, 'z' )": [
+      "q_mark_f",
+      "z",
+      "R"
+    ],
+    "( q_mark_f, 'X' )": [
+      "q_mark_f",
+      "X",
+      "R"
+    ],
+    "( q_mark_f, 'Y' )": [
+      "q_mark_f",
+      "Y",
+      "R"
+    ],
+    "( q_mark_f, '_' )": [
+      "q_check_f",
+      "_",
+      "L"
+    ],
+    "( q_mark_g, 'a' )": [
+      "q_mark_g",
+      "a",
+      "R"
+    ],
+    "( q_mark_g, 'b' )": [
+      "q_mark_g",
+      "b",
+      "R"
+    ],
+    "( q_mark_g, 'c' )": [
+      "q_mark_g",
+      "c",
+      "R"
+    ],
+    "( q_mark_g, 'd' )": [
+      "q_mark_g",
+      "d",
+      "R"
+    ],
+    "( q_mark_g, 'e' )": [
+      "q_mark_g",
+      "e",
+      "R"
+    ],
+    "( q_mark_g, 'f' )": [
+      "q_mark_g",
+      "f",
+      "R"
+    ],
+    "( q_mark_g, 'g' )": [
+      "q_mark_g",
+      "g",
+      "R"
+    ],
+    "( q_mark_g, 'h' )": [
+      "q_mark_g",
+      "h",
+      "R"
+    ],
+    "( q_mark_g, 'i' )": [
+      "q_mark_g",
+      "i",
+      "R"
+    ],
+    "( q_mark_g, 'j' )": [
+      "q_mark_g",
+      "j",
+      "R"
+    ],
+    "( q_mark_g, 'k' )": [
+      "q_mark_g",
+      "k",
+      "R"
+    ],
+    "( q_mark_g, 'l' )": [
+      "q_mark_g",
+      "l",
+      "R"
+    ],
+    "( q_mark_g, 'm' )": [
+      "q_mark_g",
+      "m",
+      "R"
+    ],
+    "( q_mark_g, 'n' )": [
+      "q_mark_g",
+      "n",
+      "R"
+    ],
+    "( q_mark_g, 'o' )": [
+      "q_mark_g",
+      "o",
+      "R"
+    ],
+    "( q_mark_g, 'p' )": [
+      "q_mark_g",
+      "p",
+      "R"
+    ],
+    "( q_mark_g, 'q' )": [
+      "q_mark_g",
+      "q",
+      "R"
+    ],
+    "( q_mark_g, 'r' )": [
+      "q_mark_g",
+      "r",
+      "R"
+    ],
+    "( q_mark_g, 's' )": [
+      "q_mark_g",
+      "s",
+      "R"
+    ],
+    "( q_mark_g, 't' )": [
+      "q_mark_g",
+      "t",
+      "R"
+    ],
+    "( q_mark_g, 'u' )": [
+      "q_mark_g",
+      "u",
+      "R"
+    ],
+    "( q_mark_g, 'v' )": [
+      "q_mark_g",
+      "v",
+      "R"
+    ],
+    "( q_mark_g, 'w' )": [
+      "q_mark_g",
+      "w",
+      "R"
+    ],
+    "( q_mark_g, 'x' )": [
+      "q_mark_g",
+      "x",
+      "R"
+    ],
+    "( q_mark_g, 'y' )": [
+      "q_mark_g",
+      "y",
+      "R"
+    ],
+    "( q_mark_g, 'z' )": [
+      "q_mark_g",
+      "z",
+      "R"
+    ],
+    "( q_mark_g, 'X' )": [
+      "q_mark_g",
+      "X",
+      "R"
+    ],
+    "( q_mark_g, 'Y' )": [
+      "q_mark_g",
+      "Y",
+      "R"
+    ],
+    "( q_mark_g, '_' )": [
+      "q_check_g",
+      "_",
+      "L"
+    ],
+    "( q_mark_h, 'a' )": [
+      "q_mark_h",
+      "a",
+      "R"
+    ],
+    "( q_mark_h, 'b' )": [
+      "q_mark_h",
+      "b",
+      "R"
+    ],
+    "( q_mark_h, 'c' )": [
+      "q_mark_h",
+      "c",
+      "R"
+    ],
+    "( q_mark_h, 'd' )": [
+      "q_mark_h",
+      "d",
+      "R"
+    ],
+    "( q_mark_h, 'e' )": [
+      "q_mark_h",
+      "e",
+      "R"
+    ],
+    "( q_mark_h, 'f' )": [
+      "q_mark_h",
+      "f",
+      "R"
+    ],
+    "( q_mark_h, 'g' )": [
+      "q_mark_h",
+      "g",
+      "R"
+    ],
+    "( q_mark_h, 'h' )": [
+      "q_mark_h",
+      "h",
+      "R"
+    ],
+    "( q_mark_h, 'i' )": [
+      "q_mark_h",
+      "i",
+      "R"
+    ],
+    "( q_mark_h, 'j' )": [
+      "q_mark_h",
+      "j",
+      "R"
+    ],
+    "( q_mark_h, 'k' )": [
+      "q_mark_h",
+      "k",
+      "R"
+    ],
+    "( q_mark_h, 'l' )": [
+      "q_mark_h",
+      "l",
+      "R"
+    ],
+    "( q_mark_h, 'm' )": [
+      "q_mark_h",
+      "m",
+      "R"
+    ],
+    "( q_mark_h, 'n' )": [
+      "q_mark_h",
+      "n",
+      "R"
+    ],
+    "( q_mark_h, 'o' )": [
+      "q_mark_h",
+      "o",
+      "R"
+    ],
+    "( q_mark_h, 'p' )": [
+      "q_mark_h",
+      "p",
+      "R"
+    ],
+    "( q_mark_h, 'q' )": [
+      "q_mark_h",
+      "q",
+      "R"
+    ],
+    "( q_mark_h, 'r' )": [
+      "q_mark_h",
+      "r",
+      "R"
+    ],
+    "( q_mark_h, 's' )": [
+      "q_mark_h",
+      "s",
+      "R"
+    ],
+    "( q_mark_h, 't' )": [
+      "q_mark_h",
+      "t",
+      "R"
+    ],
+    "( q_mark_h, 'u' )": [
+      "q_mark_h",
+      "u",
+      "R"
+    ],
+    "( q_mark_h, 'v' )": [
+      "q_mark_h",
+      "v",
+      "R"
+    ],
+    "( q_mark_h, 'w' )": [
+      "q_mark_h",
+      "w",
+      "R"
+    ],
+    "( q_mark_h, 'x' )": [
+      "q_mark_h",
+      "x",
+      "R"
+    ],
+    "( q_mark_h, 'y' )": [
+      "q_mark_h",
+      "y",
+      "R"
+    ],
+    "( q_mark_h, 'z' )": [
+      "q_mark_h",
+      "z",
+      "R"
+    ],
+    "( q_mark_h, 'X' )": [
+      "q_mark_h",
+      "X",
+      "R"
+    ],
+    "( q_mark_h, 'Y' )": [
+      "q_mark_h",
+      "Y",
+      "R"
+    ],
+    "( q_mark_h, '_' )": [
+      "q_check_h",
+      "_",
+      "L"
+    ],
+    "( q_mark_i, 'a' )": [
+      "q_mark_i",
+      "a",
+      "R"
+    ],
+    "( q_mark_i, 'b' )": [
+      "q_mark_i",
+      "b",
+      "R"
+    ],
+    "( q_mark_i, 'c' )": [
+      "q_mark_i",
+      "c",
+      "R"
+    ],
+    "( q_mark_i, 'd' )": [
+      "q_mark_i",
+      "d",
+      "R"
+    ],
+    "( q_mark_i, 'e' )": [
+      "q_mark_i",
+      "e",
+      "R"
+    ],
+    "( q_mark_i, 'f' )": [
+      "q_mark_i",
+      "f",
+      "R"
+    ],
+    "( q_mark_i, 'g' )": [
+      "q_mark_i",
+      "g",
+      "R"
+    ],
+    "( q_mark_i, 'h' )": [
+      "q_mark_i",
+      "h",
+      "R"
+    ],
+    "( q_mark_i, 'i' )": [
+      "q_mark_i",
+      "i",
+      "R"
+    ],
+    "( q_mark_i, 'j' )": [
+      "q_mark_i",
+      "j",
+      "R"
+    ],
+    "( q_mark_i, 'k' )": [
+      "q_mark_i",
+      "k",
+      "R"
+    ],
+    "( q_mark_i, 'l' )": [
+      "q_mark_i",
+      "l",
+      "R"
+    ],
+    "( q_mark_i, 'm' )": [
+      "q_mark_i",
+      "m",
+      "R"
+    ],
+    "( q_mark_i, 'n' )": [
+      "q_mark_i",
+      "n",
+      "R"
+    ],
+    "( q_mark_i, 'o' )": [
+      "q_mark_i",
+      "o",
+      "R"
+    ],
+    "( q_mark_i, 'p' )": [
+      "q_mark_i",
+      "p",
+      "R"
+    ],
+    "( q_mark_i, 'q' )": [
+      "q_mark_i",
+      "q",
+      "R"
+    ],
+    "( q_mark_i, 'r' )": [
+      "q_mark_i",
+      "r",
+      "R"
+    ],
+    "( q_mark_i, 's' )": [
+      "q_mark_i",
+      "s",
+      "R"
+    ],
+    "( q_mark_i, 't' )": [
+      "q_mark_i",
+      "t",
+      "R"
+    ],
+    "( q_mark_i, 'u' )": [
+      "q_mark_i",
+      "u",
+      "R"
+    ],
+    "( q_mark_i, 'v' )": [
+      "q_mark_i",
+      "v",
+      "R"
+    ],
+    "( q_mark_i, 'w' )": [
+      "q_mark_i",
+      "w",
+      "R"
+    ],
+    "( q_mark_i, 'x' )": [
+      "q_mark_i",
+      "x",
+      "R"
+    ],
+    "( q_mark_i, 'y' )": [
+      "q_mark_i",
+      "y",
+      "R"
+    ],
+    "( q_mark_i, 'z' )": [
+      "q_mark_i",
+      "z",
+      "R"
+    ],
+    "( q_mark_i, 'X' )": [
+      "q_mark_i",
+      "X",
+      "R"
+    ],
+    "( q_mark_i, 'Y' )": [
+      "q_mark_i",
+      "Y",
+      "R"
+    ],
+    "( q_mark_i, '_' )": [
+      "q_check_i",
+      "_",
+      "L"
+    ],
+    "( q_mark_j, 'a' )": [
+      "q_mark_j",
+      "a",
+      "R"
+    ],
+    "( q_mark_j, 'b' )": [
+      "q_mark_j",
+      "b",
+      "R"
+    ],
+    "( q_mark_j, 'c' )": [
+      "q_mark_j",
+      "c",
+      "R"
+    ],
+    "( q_mark_j, 'd' )": [
+      "q_mark_j",
+      "d",
+      "R"
+    ],
+    "( q_mark_j, 'e' )": [
+      "q_mark_j",
+      "e",
+      "R"
+    ],
+    "( q_mark_j, 'f' )": [
+      "q_mark_j",
+      "f",
+      "R"
+    ],
+    "( q_mark_j, 'g' )": [
+      "q_mark_j",
+      "g",
+      "R"
+    ],
+    "( q_mark_j, 'h' )": [
+      "q_mark_j",
+      "h",
+      "R"
+    ],
+    "( q_mark_j, 'i' )": [
+      "q_mark_j",
+      "i",
+      "R"
+    ],
+    "( q_mark_j, 'j' )": [
+      "q_mark_j",
+      "j",
+      "R"
+    ],
+    "( q_mark_j, 'k' )": [
+      "q_mark_j",
+      "k",
+      "R"
+    ],
+    "( q_mark_j, 'l' )": [
+      "q_mark_j",
+      "l",
+      "R"
+    ],
+    "( q_mark_j, 'm' )": [
+      "q_mark_j",
+      "m",
+      "R"
+    ],
+    "( q_mark_j, 'n' )": [
+      "q_mark_j",
+      "n",
+      "R"
+    ],
+    "( q_mark_j, 'o' )": [
+      "q_mark_j",
+      "o",
+      "R"
+    ],
+    "( q_mark_j, 'p' )": [
+      "q_mark_j",
+      "p",
+      "R"
+    ],
+    "( q_mark_j, 'q' )": [
+      "q_mark_j",
+      "q",
+      "R"
+    ],
+    "( q_mark_j, 'r' )": [
+      "q_mark_j",
+      "r",
+      "R"
+    ],
+    "( q_mark_j, 's' )": [
+      "q_mark_j",
+      "s",
+      "R"
+    ],
+    "( q_mark_j, 't' )": [
+      "q_mark_j",
+      "t",
+      "R"
+    ],
+    "( q_mark_j, 'u' )": [
+      "q_mark_j",
+      "u",
+      "R"
+    ],
+    "( q_mark_j, 'v' )": [
+      "q_mark_j",
+      "v",
+      "R"
+    ],
+    "( q_mark_j, 'w' )": [
+      "q_mark_j",
+      "w",
+      "R"
+    ],
+    "( q_mark_j, 'x' )": [
+      "q_mark_j",
+      "x",
+      "R"
+    ],
+    "( q_mark_j, 'y' )": [
+      "q_mark_j",
+      "y",
+      "R"
+    ],
+    "( q_mark_j, 'z' )": [
+      "q_mark_j",
+      "z",
+      "R"
+    ],
+    "( q_mark_j, 'X' )": [
+      "q_mark_j",
+      "X",
+      "R"
+    ],
+    "( q_mark_j, 'Y' )": [
+      "q_mark_j",
+      "Y",
+      "R"
+    ],
+    "( q_mark_j, '_' )": [
+      "q_check_j",
+      "_",
+      "L"
+    ],
+    "( q_mark_k, 'a' )": [
+      "q_mark_k",
+      "a",
+      "R"
+    ],
+    "( q_mark_k, 'b' )": [
+      "q_mark_k",
+      "b",
+      "R"
+    ],
+    "( q_mark_k, 'c' )": [
+      "q_mark_k",
+      "c",
+      "R"
+    ],
+    "( q_mark_k, 'd' )": [
+      "q_mark_k",
+      "d",
+      "R"
+    ],
+    "( q_mark_k, 'e' )": [
+      "q_mark_k",
+      "e",
+      "R"
+    ],
+    "( q_mark_k, 'f' )": [
+      "q_mark_k",
+      "f",
+      "R"
+    ],
+    "( q_mark_k, 'g' )": [
+      "q_mark_k",
+      "g",
+      "R"
+    ],
+    "( q_mark_k, 'h' )": [
+      "q_mark_k",
+      "h",
+      "R"
+    ],
+    "( q_mark_k, 'i' )": [
+      "q_mark_k",
+      "i",
+      "R"
+    ],
+    "( q_mark_k, 'j' )": [
+      "q_mark_k",
+      "j",
+      "R"
+    ],
+    "( q_mark_k, 'k' )": [
+      "q_mark_k",
+      "k",
+      "R"
+    ],
+    "( q_mark_k, 'l' )": [
+      "q_mark_k",
+      "l",
+      "R"
+    ],
+    "( q_mark_k, 'm' )": [
+      "q_mark_k",
+      "m",
+      "R"
+    ],
+    "( q_mark_k, 'n' )": [
+      "q_mark_k",
+      "n",
+      "R"
+    ],
+    "( q_mark_k, 'o' )": [
+      "q_mark_k",
+      "o",
+      "R"
+    ],
+    "( q_mark_k, 'p' )": [
+      "q_mark_k",
+      "p",
+      "R"
+    ],
+    "( q_mark_k, 'q' )": [
+      "q_mark_k",
+      "q",
+      "R"
+    ],
+    "( q_mark_k, 'r' )": [
+      "q_mark_k",
+      "r",
+      "R"
+    ],
+    "( q_mark_k, 's' )": [
+      "q_mark_k",
+      "s",
+      "R"
+    ],
+    "( q_mark_k, 't' )": [
+      "q_mark_k",
+      "t",
+      "R"
+    ],
+    "( q_mark_k, 'u' )": [
+      "q_mark_k",
+      "u",
+      "R"
+    ],
+    "( q_mark_k, 'v' )": [
+      "q_mark_k",
+      "v",
+      "R"
+    ],
+    "( q_mark_k, 'w' )": [
+      "q_mark_k",
+      "w",
+      "R"
+    ],
+    "( q_mark_k, 'x' )": [
+      "q_mark_k",
+      "x",
+      "R"
+    ],
+    "( q_mark_k, 'y' )": [
+      "q_mark_k",
+      "y",
+      "R"
+    ],
+    "( q_mark_k, 'z' )": [
+      "q_mark_k",
+      "z",
+      "R"
+    ],
+    "( q_mark_k, 'X' )": [
+      "q_mark_k",
+      "X",
+      "R"
+    ],
+    "( q_mark_k, 'Y' )": [
+      "q_mark_k",
+      "Y",
+      "R"
+    ],
+    "( q_mark_k, '_' )": [
+      "q_check_k",
+      "_",
+      "L"
+    ],
+    "( q_mark_l, 'a' )": [
+      "q_mark_l",
+      "a",
+      "R"
+    ],
+    "( q_mark_l, 'b' )": [
+      "q_mark_l",
+      "b",
+      "R"
+    ],
+    "( q_mark_l, 'c' )": [
+      "q_mark_l",
+      "c",
+      "R"
+    ],
+    "( q_mark_l, 'd' )": [
+      "q_mark_l",
+      "d",
+      "R"
+    ],
+    "( q_mark_l, 'e' )": [
+      "q_mark_l",
+      "e",
+      "R"
+    ],
+    "( q_mark_l, 'f' )": [
+      "q_mark_l",
+      "f",
+      "R"
+    ],
+    "( q_mark_l, 'g' )": [
+      "q_mark_l",
+      "g",
+      "R"
+    ],
+    "( q_mark_l, 'h' )": [
+      "q_mark_l",
+      "h",
+      "R"
+    ],
+    "( q_mark_l, 'i' )": [
+      "q_mark_l",
+      "i",
+      "R"
+    ],
+    "( q_mark_l, 'j' )": [
+      "q_mark_l",
+      "j",
+      "R"
+    ],
+    "( q_mark_l, 'k' )": [
+      "q_mark_l",
+      "k",
+      "R"
+    ],
+    "( q_mark_l, 'l' )": [
+      "q_mark_l",
+      "l",
+      "R"
+    ],
+    "( q_mark_l, 'm' )": [
+      "q_mark_l",
+      "m",
+      "R"
+    ],
+    "( q_mark_l, 'n' )": [
+      "q_mark_l",
+      "n",
+      "R"
+    ],
+    "( q_mark_l, 'o' )": [
+      "q_mark_l",
+      "o",
+      "R"
+    ],
+    "( q_mark_l, 'p' )": [
+      "q_mark_l",
+      "p",
+      "R"
+    ],
+    "( q_mark_l, 'q' )": [
+      "q_mark_l",
+      "q",
+      "R"
+    ],
+    "( q_mark_l, 'r' )": [
+      "q_mark_l",
+      "r",
+      "R"
+    ],
+    "( q_mark_l, 's' )": [
+      "q_mark_l",
+      "s",
+      "R"
+    ],
+    "( q_mark_l, 't' )": [
+      "q_mark_l",
+      "t",
+      "R"
+    ],
+    "( q_mark_l, 'u' )": [
+      "q_mark_l",
+      "u",
+      "R"
+    ],
+    "( q_mark_l, 'v' )": [
+      "q_mark_l",
+      "v",
+      "R"
+    ],
+    "( q_mark_l, 'w' )": [
+      "q_mark_l",
+      "w",
+      "R"
+    ],
+    "( q_mark_l, 'x' )": [
+      "q_mark_l",
+      "x",
+      "R"
+    ],
+    "( q_mark_l, 'y' )": [
+      "q_mark_l",
+      "y",
+      "R"
+    ],
+    "( q_mark_l, 'z' )": [
+      "q_mark_l",
+      "z",
+      "R"
+    ],
+    "( q_mark_l, 'X' )": [
+      "q_mark_l",
+      "X",
+      "R"
+    ],
+    "( q_mark_l, 'Y' )": [
+      "q_mark_l",
+      "Y",
+      "R"
+    ],
+    "( q_mark_l, '_' )": [
+      "q_check_l",
+      "_",
+      "L"
+    ],
+    "( q_mark_m, 'a' )": [
+      "q_mark_m",
+      "a",
+      "R"
+    ],
+    "( q_mark_m, 'b' )": [
+      "q_mark_m",
+      "b",
+      "R"
+    ],
+    "( q_mark_m, 'c' )": [
+      "q_mark_m",
+      "c",
+      "R"
+    ],
+    "( q_mark_m, 'd' )": [
+      "q_mark_m",
+      "d",
+      "R"
+    ],
+    "( q_mark_m, 'e' )": [
+      "q_mark_m",
+      "e",
+      "R"
+    ],
+    "( q_mark_m, 'f' )": [
+      "q_mark_m",
+      "f",
+      "R"
+    ],
+    "( q_mark_m, 'g' )": [
+      "q_mark_m",
+      "g",
+      "R"
+    ],
+    "( q_mark_m, 'h' )": [
+      "q_mark_m",
+      "h",
+      "R"
+    ],
+    "( q_mark_m, 'i' )": [
+      "q_mark_m",
+      "i",
+      "R"
+    ],
+    "( q_mark_m, 'j' )": [
+      "q_mark_m",
+      "j",
+      "R"
+    ],
+    "( q_mark_m, 'k' )": [
+      "q_mark_m",
+      "k",
+      "R"
+    ],
+    "( q_mark_m, 'l' )": [
+      "q_mark_m",
+      "l",
+      "R"
+    ],
+    "( q_mark_m, 'm' )": [
+      "q_mark_m",
+      "m",
+      "R"
+    ],
+    "( q_mark_m, 'n' )": [
+      "q_mark_m",
+      "n",
+      "R"
+    ],
+    "( q_mark_m, 'o' )": [
+      "q_mark_m",
+      "o",
+      "R"
+    ],
+    "( q_mark_m, 'p' )": [
+      "q_mark_m",
+      "p",
+      "R"
+    ],
+    "( q_mark_m, 'q' )": [
+      "q_mark_m",
+      "q",
+      "R"
+    ],
+    "( q_mark_m, 'r' )": [
+      "q_mark_m",
+      "r",
+      "R"
+    ],
+    "( q_mark_m, 's' )": [
+      "q_mark_m",
+      "s",
+      "R"
+    ],
+    "( q_mark_m, 't' )": [
+      "q_mark_m",
+      "t",
+      "R"
+    ],
+    "( q_mark_m, 'u' )": [
+      "q_mark_m",
+      "u",
+      "R"
+    ],
+    "( q_mark_m, 'v' )": [
+      "q_mark_m",
+      "v",
+      "R"
+    ],
+    "( q_mark_m, 'w' )": [
+      "q_mark_m",
+      "w",
+      "R"
+    ],
+    "( q_mark_m, 'x' )": [
+      "q_mark_m",
+      "x",
+      "R"
+    ],
+    "( q_mark_m, 'y' )": [
+      "q_mark_m",
+      "y",
+      "R"
+    ],
+    "( q_mark_m, 'z' )": [
+      "q_mark_m",
+      "z",
+      "R"
+    ],
+    "( q_mark_m, 'X' )": [
+      "q_mark_m",
+      "X",
+      "R"
+    ],
+    "( q_mark_m, 'Y' )": [
+      "q_mark_m",
+      "Y",
+      "R"
+    ],
+    "( q_mark_m, '_' )": [
+      "q_check_m",
+      "_",
+      "L"
+    ],
+    "( q_mark_n, 'a' )": [
+      "q_mark_n",
+      "a",
+      "R"
+    ],
+    "( q_mark_n, 'b' )": [
+      "q_mark_n",
+      "b",
+      "R"
+    ],
+    "( q_mark_n, 'c' )": [
+      "q_mark_n",
+      "c",
+      "R"
+    ],
+    "( q_mark_n, 'd' )": [
+      "q_mark_n",
+      "d",
+      "R"
+    ],
+    "( q_mark_n, 'e' )": [
+      "q_mark_n",
+      "e",
+      "R"
+    ],
+    "( q_mark_n, 'f' )": [
+      "q_mark_n",
+      "f",
+      "R"
+    ],
+    "( q_mark_n, 'g' )": [
+      "q_mark_n",
+      "g",
+      "R"
+    ],
+    "( q_mark_n, 'h' )": [
+      "q_mark_n",
+      "h",
+      "R"
+    ],
+    "( q_mark_n, 'i' )": [
+      "q_mark_n",
+      "i",
+      "R"
+    ],
+    "( q_mark_n, 'j' )": [
+      "q_mark_n",
+      "j",
+      "R"
+    ],
+    "( q_mark_n, 'k' )": [
+      "q_mark_n",
+      "k",
+      "R"
+    ],
+    "( q_mark_n, 'l' )": [
+      "q_mark_n",
+      "l",
+      "R"
+    ],
+    "( q_mark_n, 'm' )": [
+      "q_mark_n",
+      "m",
+      "R"
+    ],
+    "( q_mark_n, 'n' )": [
+      "q_mark_n",
+      "n",
+      "R"
+    ],
+    "( q_mark_n, 'o' )": [
+      "q_mark_n",
+      "o",
+      "R"
+    ],
+    "( q_mark_n, 'p' )": [
+      "q_mark_n",
+      "p",
+      "R"
+    ],
+    "( q_mark_n, 'q' )": [
+      "q_mark_n",
+      "q",
+      "R"
+    ],
+    "( q_mark_n, 'r' )": [
+      "q_mark_n",
+      "r",
+      "R"
+    ],
+    "( q_mark_n, 's' )": [
+      "q_mark_n",
+      "s",
+      "R"
+    ],
+    "( q_mark_n, 't' )": [
+      "q_mark_n",
+      "t",
+      "R"
+    ],
+    "( q_mark_n, 'u' )": [
+      "q_mark_n",
+      "u",
+      "R"
+    ],
+    "( q_mark_n, 'v' )": [
+      "q_mark_n",
+      "v",
+      "R"
+    ],
+    "( q_mark_n, 'w' )": [
+      "q_mark_n",
+      "w",
+      "R"
+    ],
+    "( q_mark_n, 'x' )": [
+      "q_mark_n",
+      "x",
+      "R"
+    ],
+    "( q_mark_n, 'y' )": [
+      "q_mark_n",
+      "y",
+      "R"
+    ],
+    "( q_mark_n, 'z' )": [
+      "q_mark_n",
+      "z",
+      "R"
+    ],
+    "( q_mark_n, 'X' )": [
+      "q_mark_n",
+      "X",
+      "R"
+    ],
+    "( q_mark_n, 'Y' )": [
+      "q_mark_n",
+      "Y",
+      "R"
+    ],
+    "( q_mark_n, '_' )": [
+      "q_check_n",
+      "_",
+      "L"
+    ],
+    "( q_mark_o, 'a' )": [
+      "q_mark_o",
+      "a",
+      "R"
+    ],
+    "( q_mark_o, 'b' )": [
+      "q_mark_o",
+      "b",
+      "R"
+    ],
+    "( q_mark_o, 'c' )": [
+      "q_mark_o",
+      "c",
+      "R"
+    ],
+    "( q_mark_o, 'd' )": [
+      "q_mark_o",
+      "d",
+      "R"
+    ],
+    "( q_mark_o, 'e' )": [
+      "q_mark_o",
+      "e",
+      "R"
+    ],
+    "( q_mark_o, 'f' )": [
+      "q_mark_o",
+      "f",
+      "R"
+    ],
+    "( q_mark_o, 'g' )": [
+      "q_mark_o",
+      "g",
+      "R"
+    ],
+    "( q_mark_o, 'h' )": [
+      "q_mark_o",
+      "h",
+      "R"
+    ],
+    "( q_mark_o, 'i' )": [
+      "q_mark_o",
+      "i",
+      "R"
+    ],
+    "( q_mark_o, 'j' )": [
+      "q_mark_o",
+      "j",
+      "R"
+    ],
+    "( q_mark_o, 'k' )": [
+      "q_mark_o",
+      "k",
+      "R"
+    ],
+    "( q_mark_o, 'l' )": [
+      "q_mark_o",
+      "l",
+      "R"
+    ],
+    "( q_mark_o, 'm' )": [
+      "q_mark_o",
+      "m",
+      "R"
+    ],
+    "( q_mark_o, 'n' )": [
+      "q_mark_o",
+      "n",
+      "R"
+    ],
+    "( q_mark_o, 'o' )": [
+      "q_mark_o",
+      "o",
+      "R"
+    ],
+    "( q_mark_o, 'p' )": [
+      "q_mark_o",
+      "p",
+      "R"
+    ],
+    "( q_mark_o, 'q' )": [
+      "q_mark_o",
+      "q",
+      "R"
+    ],
+    "( q_mark_o, 'r' )": [
+      "q_mark_o",
+      "r",
+      "R"
+    ],
+    "( q_mark_o, 's' )": [
+      "q_mark_o",
+      "s",
+      "R"
+    ],
+    "( q_mark_o, 't' )": [
+      "q_mark_o",
+      "t",
+      "R"
+    ],
+    "( q_mark_o, 'u' )": [
+      "q_mark_o",
+      "u",
+      "R"
+    ],
+    "( q_mark_o, 'v' )": [
+      "q_mark_o",
+      "v",
+      "R"
+    ],
+    "( q_mark_o, 'w' )": [
+      "q_mark_o",
+      "w",
+      "R"
+    ],
+    "( q_mark_o, 'x' )": [
+      "q_mark_o",
+      "x",
+      "R"
+    ],
+    "( q_mark_o, 'y' )": [
+      "q_mark_o",
+      "y",
+      "R"
+    ],
+    "( q_mark_o, 'z' )": [
+      "q_mark_o",
+      "z",
+      "R"
+    ],
+    "( q_mark_o, 'X' )": [
+      "q_mark_o",
+      "X",
+      "R"
+    ],
+    "( q_mark_o, 'Y' )": [
+      "q_mark_o",
+      "Y",
+      "R"
+    ],
+    "( q_mark_o, '_' )": [
+      "q_check_o",
+      "_",
+      "L"
+    ],
+    "( q_mark_p, 'a' )": [
+      "q_mark_p",
+      "a",
+      "R"
+    ],
+    "( q_mark_p, 'b' )": [
+      "q_mark_p",
+      "b",
+      "R"
+    ],
+    "( q_mark_p, 'c' )": [
+      "q_mark_p",
+      "c",
+      "R"
+    ],
+    "( q_mark_p, 'd' )": [
+      "q_mark_p",
+      "d",
+      "R"
+    ],
+    "( q_mark_p, 'e' )": [
+      "q_mark_p",
+      "e",
+      "R"
+    ],
+    "( q_mark_p, 'f' )": [
+      "q_mark_p",
+      "f",
+      "R"
+    ],
+    "( q_mark_p, 'g' )": [
+      "q_mark_p",
+      "g",
+      "R"
+    ],
+    "( q_mark_p, 'h' )": [
+      "q_mark_p",
+      "h",
+      "R"
+    ],
+    "( q_mark_p, 'i' )": [
+      "q_mark_p",
+      "i",
+      "R"
+    ],
+    "( q_mark_p, 'j' )": [
+      "q_mark_p",
+      "j",
+      "R"
+    ],
+    "( q_mark_p, 'k' )": [
+      "q_mark_p",
+      "k",
+      "R"
+    ],
+    "( q_mark_p, 'l' )": [
+      "q_mark_p",
+      "l",
+      "R"
+    ],
+    "( q_mark_p, 'm' )": [
+      "q_mark_p",
+      "m",
+      "R"
+    ],
+    "( q_mark_p, 'n' )": [
+      "q_mark_p",
+      "n",
+      "R"
+    ],
+    "( q_mark_p, 'o' )": [
+      "q_mark_p",
+      "o",
+      "R"
+    ],
+    "( q_mark_p, 'p' )": [
+      "q_mark_p",
+      "p",
+      "R"
+    ],
+    "( q_mark_p, 'q' )": [
+      "q_mark_p",
+      "q",
+      "R"
+    ],
+    "( q_mark_p, 'r' )": [
+      "q_mark_p",
+      "r",
+      "R"
+    ],
+    "( q_mark_p, 's' )": [
+      "q_mark_p",
+      "s",
+      "R"
+    ],
+    "( q_mark_p, 't' )": [
+      "q_mark_p",
+      "t",
+      "R"
+    ],
+    "( q_mark_p, 'u' )": [
+      "q_mark_p",
+      "u",
+      "R"
+    ],
+    "( q_mark_p, 'v' )": [
+      "q_mark_p",
+      "v",
+      "R"
+    ],
+    "( q_mark_p, 'w' )": [
+      "q_mark_p",
+      "w",
+      "R"
+    ],
+    "( q_mark_p, 'x' )": [
+      "q_mark_p",
+      "x",
+      "R"
+    ],
+    "( q_mark_p, 'y' )": [
+      "q_mark_p",
+      "y",
+      "R"
+    ],
+    "( q_mark_p, 'z' )": [
+      "q_mark_p",
+      "z",
+      "R"
+    ],
+    "( q_mark_p, 'X' )": [
+      "q_mark_p",
+      "X",
+      "R"
+    ],
+    "( q_mark_p, 'Y' )": [
+      "q_mark_p",
+      "Y",
+      "R"
+    ],
+    "( q_mark_p, '_' )": [
+      "q_check_p",
+      "_",
+      "L"
+    ],
+    "( q_mark_q, 'a' )": [
+      "q_mark_q",
+      "a",
+      "R"
+    ],
+    "( q_mark_q, 'b' )": [
+      "q_mark_q",
+      "b",
+      "R"
+    ],
+    "( q_mark_q, 'c' )": [
+      "q_mark_q",
+      "c",
+      "R"
+    ],
+    "( q_mark_q, 'd' )": [
+      "q_mark_q",
+      "d",
+      "R"
+    ],
+    "( q_mark_q, 'e' )": [
+      "q_mark_q",
+      "e",
+      "R"
+    ],
+    "( q_mark_q, 'f' )": [
+      "q_mark_q",
+      "f",
+      "R"
+    ],
+    "( q_mark_q, 'g' )": [
+      "q_mark_q",
+      "g",
+      "R"
+    ],
+    "( q_mark_q, 'h' )": [
+      "q_mark_q",
+      "h",
+      "R"
+    ],
+    "( q_mark_q, 'i' )": [
+      "q_mark_q",
+      "i",
+      "R"
+    ],
+    "( q_mark_q, 'j' )": [
+      "q_mark_q",
+      "j",
+      "R"
+    ],
+    "( q_mark_q, 'k' )": [
+      "q_mark_q",
+      "k",
+      "R"
+    ],
+    "( q_mark_q, 'l' )": [
+      "q_mark_q",
+      "l",
+      "R"
+    ],
+    "( q_mark_q, 'm' )": [
+      "q_mark_q",
+      "m",
+      "R"
+    ],
+    "( q_mark_q, 'n' )": [
+      "q_mark_q",
+      "n",
+      "R"
+    ],
+    "( q_mark_q, 'o' )": [
+      "q_mark_q",
+      "o",
+      "R"
+    ],
+    "( q_mark_q, 'p' )": [
+      "q_mark_q",
+      "p",
+      "R"
+    ],
+    "( q_mark_q, 'q' )": [
+      "q_mark_q",
+      "q",
+      "R"
+    ],
+    "( q_mark_q, 'r' )": [
+      "q_mark_q",
+      "r",
+      "R"
+    ],
+    "( q_mark_q, 's' )": [
+      "q_mark_q",
+      "s",
+      "R"
+    ],
+    "( q_mark_q, 't' )": [
+      "q_mark_q",
+      "t",
+      "R"
+    ],
+    "( q_mark_q, 'u' )": [
+      "q_mark_q",
+      "u",
+      "R"
+    ],
+    "( q_mark_q, 'v' )": [
+      "q_mark_q",
+      "v",
+      "R"
+    ],
+    "( q_mark_q, 'w' )": [
+      "q_mark_q",
+      "w",
+      "R"
+    ],
+    "( q_mark_q, 'x' )": [
+      "q_mark_q",
+      "x",
+      "R"
+    ],
+    "( q_mark_q, 'y' )": [
+      "q_mark_q",
+      "y",
+      "R"
+    ],
+    "( q_mark_q, 'z' )": [
+      "q_mark_q",
+      "z",
+      "R"
+    ],
+    "( q_mark_q, 'X' )": [
+      "q_mark_q",
+      "X",
+      "R"
+    ],
+    "( q_mark_q, 'Y' )": [
+      "q_mark_q",
+      "Y",
+      "R"
+    ],
+    "( q_mark_q, '_' )": [
+      "q_check_q",
+      "_",
+      "L"
+    ],
+    "( q_mark_r, 'a' )": [
+      "q_mark_r",
+      "a",
+      "R"
+    ],
+    "( q_mark_r, 'b' )": [
+      "q_mark_r",
+      "b",
+      "R"
+    ],
+    "( q_mark_r, 'c' )": [
+      "q_mark_r",
+      "c",
+      "R"
+    ],
+    "( q_mark_r, 'd' )": [
+      "q_mark_r",
+      "d",
+      "R"
+    ],
+    "( q_mark_r, 'e' )": [
+      "q_mark_r",
+      "e",
+      "R"
+    ],
+    "( q_mark_r, 'f' )": [
+      "q_mark_r",
+      "f",
+      "R"
+    ],
+    "( q_mark_r, 'g' )": [
+      "q_mark_r",
+      "g",
+      "R"
+    ],
+    "( q_mark_r, 'h' )": [
+      "q_mark_r",
+      "h",
+      "R"
+    ],
+    "( q_mark_r, 'i' )": [
+      "q_mark_r",
+      "i",
+      "R"
+    ],
+    "( q_mark_r, 'j' )": [
+      "q_mark_r",
+      "j",
+      "R"
+    ],
+    "( q_mark_r, 'k' )": [
+      "q_mark_r",
+      "k",
+      "R"
+    ],
+    "( q_mark_r, 'l' )": [
+      "q_mark_r",
+      "l",
+      "R"
+    ],
+    "( q_mark_r, 'm' )": [
+      "q_mark_r",
+      "m",
+      "R"
+    ],
+    "( q_mark_r, 'n' )": [
+      "q_mark_r",
+      "n",
+      "R"
+    ],
+    "( q_mark_r, 'o' )": [
+      "q_mark_r",
+      "o",
+      "R"
+    ],
+    "( q_mark_r, 'p' )": [
+      "q_mark_r",
+      "p",
+      "R"
+    ],
+    "( q_mark_r, 'q' )": [
+      "q_mark_r",
+      "q",
+      "R"
+    ],
+    "( q_mark_r, 'r' )": [
+      "q_mark_r",
+      "r",
+      "R"
+    ],
+    "( q_mark_r, 's' )": [
+      "q_mark_r",
+      "s",
+      "R"
+    ],
+    "( q_mark_r, 't' )": [
+      "q_mark_r",
+      "t",
+      "R"
+    ],
+    "( q_mark_r, 'u' )": [
+      "q_mark_r",
+      "u",
+      "R"
+    ],
+    "( q_mark_r, 'v' )": [
+      "q_mark_r",
+      "v",
+      "R"
+    ],
+    "( q_mark_r, 'w' )": [
+      "q_mark_r",
+      "w",
+      "R"
+    ],
+    "( q_mark_r, 'x' )": [
+      "q_mark_r",
+      "x",
+      "R"
+    ],
+    "( q_mark_r, 'y' )": [
+      "q_mark_r",
+      "y",
+      "R"
+    ],
+    "( q_mark_r, 'z' )": [
+      "q_mark_r",
+      "z",
+      "R"
+    ],
+    "( q_mark_r, 'X' )": [
+      "q_mark_r",
+      "X",
+      "R"
+    ],
+    "( q_mark_r, 'Y' )": [
+      "q_mark_r",
+      "Y",
+      "R"
+    ],
+    "( q_mark_r, '_' )": [
+      "q_check_r",
+      "_",
+      "L"
+    ],
+    "( q_mark_s, 'a' )": [
+      "q_mark_s",
+      "a",
+      "R"
+    ],
+    "( q_mark_s, 'b' )": [
+      "q_mark_s",
+      "b",
+      "R"
+    ],
+    "( q_mark_s, 'c' )": [
+      "q_mark_s",
+      "c",
+      "R"
+    ],
+    "( q_mark_s, 'd' )": [
+      "q_mark_s",
+      "d",
+      "R"
+    ],
+    "( q_mark_s, 'e' )": [
+      "q_mark_s",
+      "e",
+      "R"
+    ],
+    "( q_mark_s, 'f' )": [
+      "q_mark_s",
+      "f",
+      "R"
+    ],
+    "( q_mark_s, 'g' )": [
+      "q_mark_s",
+      "g",
+      "R"
+    ],
+    "( q_mark_s, 'h' )": [
+      "q_mark_s",
+      "h",
+      "R"
+    ],
+    "( q_mark_s, 'i' )": [
+      "q_mark_s",
+      "i",
+      "R"
+    ],
+    "( q_mark_s, 'j' )": [
+      "q_mark_s",
+      "j",
+      "R"
+    ],
+    "( q_mark_s, 'k' )": [
+      "q_mark_s",
+      "k",
+      "R"
+    ],
+    "( q_mark_s, 'l' )": [
+      "q_mark_s",
+      "l",
+      "R"
+    ],
+    "( q_mark_s, 'm' )": [
+      "q_mark_s",
+      "m",
+      "R"
+    ],
+    "( q_mark_s, 'n' )": [
+      "q_mark_s",
+      "n",
+      "R"
+    ],
+    "( q_mark_s, 'o' )": [
+      "q_mark_s",
+      "o",
+      "R"
+    ],
+    "( q_mark_s, 'p' )": [
+      "q_mark_s",
+      "p",
+      "R"
+    ],
+    "( q_mark_s, 'q' )": [
+      "q_mark_s",
+      "q",
+      "R"
+    ],
+    "( q_mark_s, 'r' )": [
+      "q_mark_s",
+      "r",
+      "R"
+    ],
+    "( q_mark_s, 's' )": [
+      "q_mark_s",
+      "s",
+      "R"
+    ],
+    "( q_mark_s, 't' )": [
+      "q_mark_s",
+      "t",
+      "R"
+    ],
+    "( q_mark_s, 'u' )": [
+      "q_mark_s",
+      "u",
+      "R"
+    ],
+    "( q_mark_s, 'v' )": [
+      "q_mark_s",
+      "v",
+      "R"
+    ],
+    "( q_mark_s, 'w' )": [
+      "q_mark_s",
+      "w",
+      "R"
+    ],
+    "( q_mark_s, 'x' )": [
+      "q_mark_s",
+      "x",
+      "R"
+    ],
+    "( q_mark_s, 'y' )": [
+      "q_mark_s",
+      "y",
+      "R"
+    ],
+    "( q_mark_s, 'z' )": [
+      "q_mark_s",
+      "z",
+      "R"
+    ],
+    "( q_mark_s, 'X' )": [
+      "q_mark_s",
+      "X",
+      "R"
+    ],
+    "( q_mark_s, 'Y' )": [
+      "q_mark_s",
+      "Y",
+      "R"
+    ],
+    "( q_mark_s, '_' )": [
+      "q_check_s",
+      "_",
+      "L"
+    ],
+    "( q_mark_t, 'a' )": [
+      "q_mark_t",
+      "a",
+      "R"
+    ],
+    "( q_mark_t, 'b' )": [
+      "q_mark_t",
+      "b",
+      "R"
+    ],
+    "( q_mark_t, 'c' )": [
+      "q_mark_t",
+      "c",
+      "R"
+    ],
+    "( q_mark_t, 'd' )": [
+      "q_mark_t",
+      "d",
+      "R"
+    ],
+    "( q_mark_t, 'e' )": [
+      "q_mark_t",
+      "e",
+      "R"
+    ],
+    "( q_mark_t, 'f' )": [
+      "q_mark_t",
+      "f",
+      "R"
+    ],
+    "( q_mark_t, 'g' )": [
+      "q_mark_t",
+      "g",
+      "R"
+    ],
+    "( q_mark_t, 'h' )": [
+      "q_mark_t",
+      "h",
+      "R"
+    ],
+    "( q_mark_t, 'i' )": [
+      "q_mark_t",
+      "i",
+      "R"
+    ],
+    "( q_mark_t, 'j' )": [
+      "q_mark_t",
+      "j",
+      "R"
+    ],
+    "( q_mark_t, 'k' )": [
+      "q_mark_t",
+      "k",
+      "R"
+    ],
+    "( q_mark_t, 'l' )": [
+      "q_mark_t",
+      "l",
+      "R"
+    ],
+    "( q_mark_t, 'm' )": [
+      "q_mark_t",
+      "m",
+      "R"
+    ],
+    "( q_mark_t, 'n' )": [
+      "q_mark_t",
+      "n",
+      "R"
+    ],
+    "( q_mark_t, 'o' )": [
+      "q_mark_t",
+      "o",
+      "R"
+    ],
+    "( q_mark_t, 'p' )": [
+      "q_mark_t",
+      "p",
+      "R"
+    ],
+    "( q_mark_t, 'q' )": [
+      "q_mark_t",
+      "q",
+      "R"
+    ],
+    "( q_mark_t, 'r' )": [
+      "q_mark_t",
+      "r",
+      "R"
+    ],
+    "( q_mark_t, 's' )": [
+      "q_mark_t",
+      "s",
+      "R"
+    ],
+    "( q_mark_t, 't' )": [
+      "q_mark_t",
+      "t",
+      "R"
+    ],
+    "( q_mark_t, 'u' )": [
+      "q_mark_t",
+      "u",
+      "R"
+    ],
+    "( q_mark_t, 'v' )": [
+      "q_mark_t",
+      "v",
+      "R"
+    ],
+    "( q_mark_t, 'w' )": [
+      "q_mark_t",
+      "w",
+      "R"
+    ],
+    "( q_mark_t, 'x' )": [
+      "q_mark_t",
+      "x",
+      "R"
+    ],
+    "( q_mark_t, 'y' )": [
+      "q_mark_t",
+      "y",
+      "R"
+    ],
+    "( q_mark_t, 'z' )": [
+      "q_mark_t",
+      "z",
+      "R"
+    ],
+    "( q_mark_t, 'X' )": [
+      "q_mark_t",
+      "X",
+      "R"
+    ],
+    "( q_mark_t, 'Y' )": [
+      "q_mark_t",
+      "Y",
+      "R"
+    ],
+    "( q_mark_t, '_' )": [
+      "q_check_t",
+      "_",
+      "L"
+    ],
+    "( q_mark_u, 'a' )": [
+      "q_mark_u",
+      "a",
+      "R"
+    ],
+    "( q_mark_u, 'b' )": [
+      "q_mark_u",
+      "b",
+      "R"
+    ],
+    "( q_mark_u, 'c' )": [
+      "q_mark_u",
+      "c",
+      "R"
+    ],
+    "( q_mark_u, 'd' )": [
+      "q_mark_u",
+      "d",
+      "R"
+    ],
+    "( q_mark_u, 'e' )": [
+      "q_mark_u",
+      "e",
+      "R"
+    ],
+    "( q_mark_u, 'f' )": [
+      "q_mark_u",
+      "f",
+      "R"
+    ],
+    "( q_mark_u, 'g' )": [
+      "q_mark_u",
+      "g",
+      "R"
+    ],
+    "( q_mark_u, 'h' )": [
+      "q_mark_u",
+      "h",
+      "R"
+    ],
+    "( q_mark_u, 'i' )": [
+      "q_mark_u",
+      "i",
+      "R"
+    ],
+    "( q_mark_u, 'j' )": [
+      "q_mark_u",
+      "j",
+      "R"
+    ],
+    "( q_mark_u, 'k' )": [
+      "q_mark_u",
+      "k",
+      "R"
+    ],
+    "( q_mark_u, 'l' )": [
+      "q_mark_u",
+      "l",
+      "R"
+    ],
+    "( q_mark_u, 'm' )": [
+      "q_mark_u",
+      "m",
+      "R"
+    ],
+    "( q_mark_u, 'n' )": [
+      "q_mark_u",
+      "n",
+      "R"
+    ],
+    "( q_mark_u, 'o' )": [
+      "q_mark_u",
+      "o",
+      "R"
+    ],
+    "( q_mark_u, 'p' )": [
+      "q_mark_u",
+      "p",
+      "R"
+    ],
+    "( q_mark_u, 'q' )": [
+      "q_mark_u",
+      "q",
+      "R"
+    ],
+    "( q_mark_u, 'r' )": [
+      "q_mark_u",
+      "r",
+      "R"
+    ],
+    "( q_mark_u, 's' )": [
+      "q_mark_u",
+      "s",
+      "R"
+    ],
+    "( q_mark_u, 't' )": [
+      "q_mark_u",
+      "t",
+      "R"
+    ],
+    "( q_mark_u, 'u' )": [
+      "q_mark_u",
+      "u",
+      "R"
+    ],
+    "( q_mark_u, 'v' )": [
+      "q_mark_u",
+      "v",
+      "R"
+    ],
+    "( q_mark_u, 'w' )": [
+      "q_mark_u",
+      "w",
+      "R"
+    ],
+    "( q_mark_u, 'x' )": [
+      "q_mark_u",
+      "x",
+      "R"
+    ],
+    "( q_mark_u, 'y' )": [
+      "q_mark_u",
+      "y",
+      "R"
+    ],
+    "( q_mark_u, 'z' )": [
+      "q_mark_u",
+      "z",
+      "R"
+    ],
+    "( q_mark_u, 'X' )": [
+      "q_mark_u",
+      "X",
+      "R"
+    ],
+    "( q_mark_u, 'Y' )": [
+      "q_mark_u",
+      "Y",
+      "R"
+    ],
+    "( q_mark_u, '_' )": [
+      "q_check_u",
+      "_",
+      "L"
+    ],
+    "( q_mark_v, 'a' )": [
+      "q_mark_v",
+      "a",
+      "R"
+    ],
+    "( q_mark_v, 'b' )": [
+      "q_mark_v",
+      "b",
+      "R"
+    ],
+    "( q_mark_v, 'c' )": [
+      "q_mark_v",
+      "c",
+      "R"
+    ],
+    "( q_mark_v, 'd' )": [
+      "q_mark_v",
+      "d",
+      "R"
+    ],
+    "( q_mark_v, 'e' )": [
+      "q_mark_v",
+      "e",
+      "R"
+    ],
+    "( q_mark_v, 'f' )": [
+      "q_mark_v",
+      "f",
+      "R"
+    ],
+    "( q_mark_v, 'g' )": [
+      "q_mark_v",
+      "g",
+      "R"
+    ],
+    "( q_mark_v, 'h' )": [
+      "q_mark_v",
+      "h",
+      "R"
+    ],
+    "( q_mark_v, 'i' )": [
+      "q_mark_v",
+      "i",
+      "R"
+    ],
+    "( q_mark_v, 'j' )": [
+      "q_mark_v",
+      "j",
+      "R"
+    ],
+    "( q_mark_v, 'k' )": [
+      "q_mark_v",
+      "k",
+      "R"
+    ],
+    "( q_mark_v, 'l' )": [
+      "q_mark_v",
+      "l",
+      "R"
+    ],
+    "( q_mark_v, 'm' )": [
+      "q_mark_v",
+      "m",
+      "R"
+    ],
+    "( q_mark_v, 'n' )": [
+      "q_mark_v",
+      "n",
+      "R"
+    ],
+    "( q_mark_v, 'o' )": [
+      "q_mark_v",
+      "o",
+      "R"
+    ],
+    "( q_mark_v, 'p' )": [
+      "q_mark_v",
+      "p",
+      "R"
+    ],
+    "( q_mark_v, 'q' )": [
+      "q_mark_v",
+      "q",
+      "R"
+    ],
+    "( q_mark_v, 'r' )": [
+      "q_mark_v",
+      "r",
+      "R"
+    ],
+    "( q_mark_v, 's' )": [
+      "q_mark_v",
+      "s",
+      "R"
+    ],
+    "( q_mark_v, 't' )": [
+      "q_mark_v",
+      "t",
+      "R"
+    ],
+    "( q_mark_v, 'u' )": [
+      "q_mark_v",
+      "u",
+      "R"
+    ],
+    "( q_mark_v, 'v' )": [
+      "q_mark_v",
+      "v",
+      "R"
+    ],
+    "( q_mark_v, 'w' )": [
+      "q_mark_v",
+      "w",
+      "R"
+    ],
+    "( q_mark_v, 'x' )": [
+      "q_mark_v",
+      "x",
+      "R"
+    ],
+    "( q_mark_v, 'y' )": [
+      "q_mark_v",
+      "y",
+      "R"
+    ],
+    "( q_mark_v, 'z' )": [
+      "q_mark_v",
+      "z",
+      "R"
+    ],
+    "( q_mark_v, 'X' )": [
+      "q_mark_v",
+      "X",
+      "R"
+    ],
+    "( q_mark_v, 'Y' )": [
+      "q_mark_v",
+      "Y",
+      "R"
+    ],
+    "( q_mark_v, '_' )": [
+      "q_check_v",
+      "_",
+      "L"
+    ],
+    "( q_mark_w, 'a' )": [
+      "q_mark_w",
+      "a",
+      "R"
+    ],
+    "( q_mark_w, 'b' )": [
+      "q_mark_w",
+      "b",
+      "R"
+    ],
+    "( q_mark_w, 'c' )": [
+      "q_mark_w",
+      "c",
+      "R"
+    ],
+    "( q_mark_w, 'd' )": [
+      "q_mark_w",
+      "d",
+      "R"
+    ],
+    "( q_mark_w, 'e' )": [
+      "q_mark_w",
+      "e",
+      "R"
+    ],
+    "( q_mark_w, 'f' )": [
+      "q_mark_w",
+      "f",
+      "R"
+    ],
+    "( q_mark_w, 'g' )": [
+      "q_mark_w",
+      "g",
+      "R"
+    ],
+    "( q_mark_w, 'h' )": [
+      "q_mark_w",
+      "h",
+      "R"
+    ],
+    "( q_mark_w, 'i' )": [
+      "q_mark_w",
+      "i",
+      "R"
+    ],
+    "( q_mark_w, 'j' )": [
+      "q_mark_w",
+      "j",
+      "R"
+    ],
+    "( q_mark_w, 'k' )": [
+      "q_mark_w",
+      "k",
+      "R"
+    ],
+    "( q_mark_w, 'l' )": [
+      "q_mark_w",
+      "l",
+      "R"
+    ],
+    "( q_mark_w, 'm' )": [
+      "q_mark_w",
+      "m",
+      "R"
+    ],
+    "( q_mark_w, 'n' )": [
+      "q_mark_w",
+      "n",
+      "R"
+    ],
+    "( q_mark_w, 'o' )": [
+      "q_mark_w",
+      "o",
+      "R"
+    ],
+    "( q_mark_w, 'p' )": [
+      "q_mark_w",
+      "p",
+      "R"
+    ],
+    "( q_mark_w, 'q' )": [
+      "q_mark_w",
+      "q",
+      "R"
+    ],
+    "( q_mark_w, 'r' )": [
+      "q_mark_w",
+      "r",
+      "R"
+    ],
+    "( q_mark_w, 's' )": [
+      "q_mark_w",
+      "s",
+      "R"
+    ],
+    "( q_mark_w, 't' )": [
+      "q_mark_w",
+      "t",
+      "R"
+    ],
+    "( q_mark_w, 'u' )": [
+      "q_mark_w",
+      "u",
+      "R"
+    ],
+    "( q_mark_w, 'v' )": [
+      "q_mark_w",
+      "v",
+      "R"
+    ],
+    "( q_mark_w, 'w' )": [
+      "q_mark_w",
+      "w",
+      "R"
+    ],
+    "( q_mark_w, 'x' )": [
+      "q_mark_w",
+      "x",
+      "R"
+    ],
+    "( q_mark_w, 'y' )": [
+      "q_mark_w",
+      "y",
+      "R"
+    ],
+    "( q_mark_w, 'z' )": [
+      "q_mark_w",
+      "z",
+      "R"
+    ],
+    "( q_mark_w, 'X' )": [
+      "q_mark_w",
+      "X",
+      "R"
+    ],
+    "( q_mark_w, 'Y' )": [
+      "q_mark_w",
+      "Y",
+      "R"
+    ],
+    "( q_mark_w, '_' )": [
+      "q_check_w",
+      "_",
+      "L"
+    ],
+    "( q_mark_x, 'a' )": [
+      "q_mark_x",
+      "a",
+      "R"
+    ],
+    "( q_mark_x, 'b' )": [
+      "q_mark_x",
+      "b",
+      "R"
+    ],
+    "( q_mark_x, 'c' )": [
+      "q_mark_x",
+      "c",
+      "R"
+    ],
+    "( q_mark_x, 'd' )": [
+      "q_mark_x",
+      "d",
+      "R"
+    ],
+    "( q_mark_x, 'e' )": [
+      "q_mark_x",
+      "e",
+      "R"
+    ],
+    "( q_mark_x, 'f' )": [
+      "q_mark_x",
+      "f",
+      "R"
+    ],
+    "( q_mark_x, 'g' )": [
+      "q_mark_x",
+      "g",
+      "R"
+    ],
+    "( q_mark_x, 'h' )": [
+      "q_mark_x",
+      "h",
+      "R"
+    ],
+    "( q_mark_x, 'i' )": [
+      "q_mark_x",
+      "i",
+      "R"
+    ],
+    "( q_mark_x, 'j' )": [
+      "q_mark_x",
+      "j",
+      "R"
+    ],
+    "( q_mark_x, 'k' )": [
+      "q_mark_x",
+      "k",
+      "R"
+    ],
+    "( q_mark_x, 'l' )": [
+      "q_mark_x",
+      "l",
+      "R"
+    ],
+    "( q_mark_x, 'm' )": [
+      "q_mark_x",
+      "m",
+      "R"
+    ],
+    "( q_mark_x, 'n' )": [
+      "q_mark_x",
+      "n",
+      "R"
+    ],
+    "( q_mark_x, 'o' )": [
+      "q_mark_x",
+      "o",
+      "R"
+    ],
+    "( q_mark_x, 'p' )": [
+      "q_mark_x",
+      "p",
+      "R"
+    ],
+    "( q_mark_x, 'q' )": [
+      "q_mark_x",
+      "q",
+      "R"
+    ],
+    "( q_mark_x, 'r' )": [
+      "q_mark_x",
+      "r",
+      "R"
+    ],
+    "( q_mark_x, 's' )": [
+      "q_mark_x",
+      "s",
+      "R"
+    ],
+    "( q_mark_x, 't' )": [
+      "q_mark_x",
+      "t",
+      "R"
+    ],
+    "( q_mark_x, 'u' )": [
+      "q_mark_x",
+      "u",
+      "R"
+    ],
+    "( q_mark_x, 'v' )": [
+      "q_mark_x",
+      "v",
+      "R"
+    ],
+    "( q_mark_x, 'w' )": [
+      "q_mark_x",
+      "w",
+      "R"
+    ],
+    "( q_mark_x, 'x' )": [
+      "q_mark_x",
+      "x",
+      "R"
+    ],
+    "( q_mark_x, 'y' )": [
+      "q_mark_x",
+      "y",
+      "R"
+    ],
+    "( q_mark_x, 'z' )": [
+      "q_mark_x",
+      "z",
+      "R"
+    ],
+    "( q_mark_x, 'X' )": [
+      "q_mark_x",
+      "X",
+      "R"
+    ],
+    "( q_mark_x, 'Y' )": [
+      "q_mark_x",
+      "Y",
+      "R"
+    ],
+    "( q_mark_x, '_' )": [
+      "q_check_x",
+      "_",
+      "L"
+    ],
+    "( q_mark_y, 'a' )": [
+      "q_mark_y",
+      "a",
+      "R"
+    ],
+    "( q_mark_y, 'b' )": [
+      "q_mark_y",
+      "b",
+      "R"
+    ],
+    "( q_mark_y, 'c' )": [
+      "q_mark_y",
+      "c",
+      "R"
+    ],
+    "( q_mark_y, 'd' )": [
+      "q_mark_y",
+      "d",
+      "R"
+    ],
+    "( q_mark_y, 'e' )": [
+      "q_mark_y",
+      "e",
+      "R"
+    ],
+    "( q_mark_y, 'f' )": [
+      "q_mark_y",
+      "f",
+      "R"
+    ],
+    "( q_mark_y, 'g' )": [
+      "q_mark_y",
+      "g",
+      "R"
+    ],
+    "( q_mark_y, 'h' )": [
+      "q_mark_y",
+      "h",
+      "R"
+    ],
+    "( q_mark_y, 'i' )": [
+      "q_mark_y",
+      "i",
+      "R"
+    ],
+    "( q_mark_y, 'j' )": [
+      "q_mark_y",
+      "j",
+      "R"
+    ],
+    "( q_mark_y, 'k' )": [
+      "q_mark_y",
+      "k",
+      "R"
+    ],
+    "( q_mark_y, 'l' )": [
+      "q_mark_y",
+      "l",
+      "R"
+    ],
+    "( q_mark_y, 'm' )": [
+      "q_mark_y",
+      "m",
+      "R"
+    ],
+    "( q_mark_y, 'n' )": [
+      "q_mark_y",
+      "n",
+      "R"
+    ],
+    "( q_mark_y, 'o' )": [
+      "q_mark_y",
+      "o",
+      "R"
+    ],
+    "( q_mark_y, 'p' )": [
+      "q_mark_y",
+      "p",
+      "R"
+    ],
+    "( q_mark_y, 'q' )": [
+      "q_mark_y",
+      "q",
+      "R"
+    ],
+    "( q_mark_y, 'r' )": [
+      "q_mark_y",
+      "r",
+      "R"
+    ],
+    "( q_mark_y, 's' )": [
+      "q_mark_y",
+      "s",
+      "R"
+    ],
+    "( q_mark_y, 't' )": [
+      "q_mark_y",
+      "t",
+      "R"
+    ],
+    "( q_mark_y, 'u' )": [
+      "q_mark_y",
+      "u",
+      "R"
+    ],
+    "( q_mark_y, 'v' )": [
+      "q_mark_y",
+      "v",
+      "R"
+    ],
+    "( q_mark_y, 'w' )": [
+      "q_mark_y",
+      "w",
+      "R"
+    ],
+    "( q_mark_y, 'x' )": [
+      "q_mark_y",
+      "x",
+      "R"
+    ],
+    "( q_mark_y, 'y' )": [
+      "q_mark_y",
+      "y",
+      "R"
+    ],
+    "( q_mark_y, 'z' )": [
+      "q_mark_y",
+      "z",
+      "R"
+    ],
+    "( q_mark_y, 'X' )": [
+      "q_mark_y",
+      "X",
+      "R"
+    ],
+    "( q_mark_y, 'Y' )": [
+      "q_mark_y",
+      "Y",
+      "R"
+    ],
+    "( q_mark_y, '_' )": [
+      "q_check_y",
+      "_",
+      "L"
+    ],
+    "( q_mark_z, 'a' )": [
+      "q_mark_z",
+      "a",
+      "R"
+    ],
+    "( q_mark_z, 'b' )": [
+      "q_mark_z",
+      "b",
+      "R"
+    ],
+    "( q_mark_z, 'c' )": [
+      "q_mark_z",
+      "c",
+      "R"
+    ],
+    "( q_mark_z, 'd' )": [
+      "q_mark_z",
+      "d",
+      "R"
+    ],
+    "( q_mark_z, 'e' )": [
+      "q_mark_z",
+      "e",
+      "R"
+    ],
+    "( q_mark_z, 'f' )": [
+      "q_mark_z",
+      "f",
+      "R"
+    ],
+    "( q_mark_z, 'g' )": [
+      "q_mark_z",
+      "g",
+      "R"
+    ],
+    "( q_mark_z, 'h' )": [
+      "q_mark_z",
+      "h",
+      "R"
+    ],
+    "( q_mark_z, 'i' )": [
+      "q_mark_z",
+      "i",
+      "R"
+    ],
+    "( q_mark_z, 'j' )": [
+      "q_mark_z",
+      "j",
+      "R"
+    ],
+    "( q_mark_z, 'k' )": [
+      "q_mark_z",
+      "k",
+      "R"
+    ],
+    "( q_mark_z, 'l' )": [
+      "q_mark_z",
+      "l",
+      "R"
+    ],
+    "( q_mark_z, 'm' )": [
+      "q_mark_z",
+      "m",
+      "R"
+    ],
+    "( q_mark_z, 'n' )": [
+      "q_mark_z",
+      "n",
+      "R"
+    ],
+    "( q_mark_z, 'o' )": [
+      "q_mark_z",
+      "o",
+      "R"
+    ],
+    "( q_mark_z, 'p' )": [
+      "q_mark_z",
+      "p",
+      "R"
+    ],
+    "( q_mark_z, 'q' )": [
+      "q_mark_z",
+      "q",
+      "R"
+    ],
+    "( q_mark_z, 'r' )": [
+      "q_mark_z",
+      "r",
+      "R"
+    ],
+    "( q_mark_z, 's' )": [
+      "q_mark_z",
+      "s",
+      "R"
+    ],
+    "( q_mark_z, 't' )": [
+      "q_mark_z",
+      "t",
+      "R"
+    ],
+    "( q_mark_z, 'u' )": [
+      "q_mark_z",
+      "u",
+      "R"
+    ],
+    "( q_mark_z, 'v' )": [
+      "q_mark_z",
+      "v",
+      "R"
+    ],
+    "( q_mark_z, 'w' )": [
+      "q_mark_z",
+      "w",
+      "R"
+    ],
+    "( q_mark_z, 'x' )": [
+      "q_mark_z",
+      "x",
+      "R"
+    ],
+    "( q_mark_z, 'y' )": [
+      "q_mark_z",
+      "y",
+      "R"
+    ],
+    "( q_mark_z, 'z' )": [
+      "q_mark_z",
+      "z",
+      "R"
+    ],
+    "( q_mark_z, 'X' )": [
+      "q_mark_z",
+      "X",
+      "R"
+    ],
+    "( q_mark_z, 'Y' )": [
+      "q_mark_z",
+      "Y",
+      "R"
+    ],
+    "( q_mark_z, '_' )": [
+      "q_check_z",
+      "_",
+      "L"
+    ],
+    "( q_check_a, 'a' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_a, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_a, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_a, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_a, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_a, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_a, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_a, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_a, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_a, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_a, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_a, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_a, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_a, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_a, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_a, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_a, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_a, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_a, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_a, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_a, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_a, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_a, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_a, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_a, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_a, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_a, 'X' )": [
+      "q_check_a",
+      "X",
+      "L"
+    ],
+    "( q_check_a, 'Y' )": [
+      "q_check_a",
+      "Y",
+      "L"
+    ],
+    "( q_check_a, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_b, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_b, 'b' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_b, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_b, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_b, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_b, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_b, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_b, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_b, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_b, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_b, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_b, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_b, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_b, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_b, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_b, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_b, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_b, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_b, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_b, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_b, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_b, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_b, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_b, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_b, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_b, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_b, 'X' )": [
+      "q_check_b",
+      "X",
+      "L"
+    ],
+    "( q_check_b, 'Y' )": [
+      "q_check_b",
+      "Y",
+      "L"
+    ],
+    "( q_check_b, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_c, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_c, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_c, 'c' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_c, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_c, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_c, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_c, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_c, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_c, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_c, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_c, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_c, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_c, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_c, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_c, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_c, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_c, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_c, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_c, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_c, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_c, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_c, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_c, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_c, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_c, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_c, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_c, 'X' )": [
+      "q_check_c",
+      "X",
+      "L"
+    ],
+    "( q_check_c, 'Y' )": [
+      "q_check_c",
+      "Y",
+      "L"
+    ],
+    "( q_check_c, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_d, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_d, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_d, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_d, 'd' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_d, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_d, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_d, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_d, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_d, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_d, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_d, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_d, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_d, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_d, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_d, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_d, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_d, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_d, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_d, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_d, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_d, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_d, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_d, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_d, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_d, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_d, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_d, 'X' )": [
+      "q_check_d",
+      "X",
+      "L"
+    ],
+    "( q_check_d, 'Y' )": [
+      "q_check_d",
+      "Y",
+      "L"
+    ],
+    "( q_check_d, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_e, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_e, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_e, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_e, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_e, 'e' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_e, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_e, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_e, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_e, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_e, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_e, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_e, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_e, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_e, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_e, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_e, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_e, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_e, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_e, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_e, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_e, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_e, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_e, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_e, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_e, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_e, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_e, 'X' )": [
+      "q_check_e",
+      "X",
+      "L"
+    ],
+    "( q_check_e, 'Y' )": [
+      "q_check_e",
+      "Y",
+      "L"
+    ],
+    "( q_check_e, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_f, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_f, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_f, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_f, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_f, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_f, 'f' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_f, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_f, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_f, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_f, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_f, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_f, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_f, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_f, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_f, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_f, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_f, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_f, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_f, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_f, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_f, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_f, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_f, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_f, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_f, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_f, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_f, 'X' )": [
+      "q_check_f",
+      "X",
+      "L"
+    ],
+    "( q_check_f, 'Y' )": [
+      "q_check_f",
+      "Y",
+      "L"
+    ],
+    "( q_check_f, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_g, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_g, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_g, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_g, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_g, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_g, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_g, 'g' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_g, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_g, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_g, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_g, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_g, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_g, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_g, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_g, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_g, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_g, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_g, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_g, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_g, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_g, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_g, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_g, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_g, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_g, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_g, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_g, 'X' )": [
+      "q_check_g",
+      "X",
+      "L"
+    ],
+    "( q_check_g, 'Y' )": [
+      "q_check_g",
+      "Y",
+      "L"
+    ],
+    "( q_check_g, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_h, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_h, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_h, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_h, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_h, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_h, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_h, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_h, 'h' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_h, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_h, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_h, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_h, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_h, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_h, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_h, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_h, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_h, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_h, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_h, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_h, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_h, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_h, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_h, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_h, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_h, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_h, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_h, 'X' )": [
+      "q_check_h",
+      "X",
+      "L"
+    ],
+    "( q_check_h, 'Y' )": [
+      "q_check_h",
+      "Y",
+      "L"
+    ],
+    "( q_check_h, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_i, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_i, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_i, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_i, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_i, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_i, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_i, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_i, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_i, 'i' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_i, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_i, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_i, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_i, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_i, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_i, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_i, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_i, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_i, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_i, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_i, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_i, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_i, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_i, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_i, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_i, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_i, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_i, 'X' )": [
+      "q_check_i",
+      "X",
+      "L"
+    ],
+    "( q_check_i, 'Y' )": [
+      "q_check_i",
+      "Y",
+      "L"
+    ],
+    "( q_check_i, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_j, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_j, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_j, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_j, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_j, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_j, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_j, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_j, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_j, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_j, 'j' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_j, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_j, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_j, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_j, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_j, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_j, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_j, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_j, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_j, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_j, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_j, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_j, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_j, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_j, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_j, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_j, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_j, 'X' )": [
+      "q_check_j",
+      "X",
+      "L"
+    ],
+    "( q_check_j, 'Y' )": [
+      "q_check_j",
+      "Y",
+      "L"
+    ],
+    "( q_check_j, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_k, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_k, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_k, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_k, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_k, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_k, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_k, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_k, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_k, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_k, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_k, 'k' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_k, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_k, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_k, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_k, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_k, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_k, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_k, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_k, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_k, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_k, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_k, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_k, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_k, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_k, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_k, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_k, 'X' )": [
+      "q_check_k",
+      "X",
+      "L"
+    ],
+    "( q_check_k, 'Y' )": [
+      "q_check_k",
+      "Y",
+      "L"
+    ],
+    "( q_check_k, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_l, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_l, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_l, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_l, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_l, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_l, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_l, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_l, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_l, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_l, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_l, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_l, 'l' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_l, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_l, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_l, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_l, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_l, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_l, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_l, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_l, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_l, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_l, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_l, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_l, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_l, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_l, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_l, 'X' )": [
+      "q_check_l",
+      "X",
+      "L"
+    ],
+    "( q_check_l, 'Y' )": [
+      "q_check_l",
+      "Y",
+      "L"
+    ],
+    "( q_check_l, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_m, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_m, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_m, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_m, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_m, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_m, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_m, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_m, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_m, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_m, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_m, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_m, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_m, 'm' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_m, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_m, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_m, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_m, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_m, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_m, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_m, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_m, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_m, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_m, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_m, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_m, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_m, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_m, 'X' )": [
+      "q_check_m",
+      "X",
+      "L"
+    ],
+    "( q_check_m, 'Y' )": [
+      "q_check_m",
+      "Y",
+      "L"
+    ],
+    "( q_check_m, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_n, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_n, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_n, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_n, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_n, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_n, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_n, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_n, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_n, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_n, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_n, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_n, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_n, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_n, 'n' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_n, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_n, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_n, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_n, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_n, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_n, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_n, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_n, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_n, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_n, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_n, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_n, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_n, 'X' )": [
+      "q_check_n",
+      "X",
+      "L"
+    ],
+    "( q_check_n, 'Y' )": [
+      "q_check_n",
+      "Y",
+      "L"
+    ],
+    "( q_check_n, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_o, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_o, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_o, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_o, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_o, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_o, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_o, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_o, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_o, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_o, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_o, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_o, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_o, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_o, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_o, 'o' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_o, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_o, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_o, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_o, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_o, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_o, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_o, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_o, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_o, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_o, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_o, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_o, 'X' )": [
+      "q_check_o",
+      "X",
+      "L"
+    ],
+    "( q_check_o, 'Y' )": [
+      "q_check_o",
+      "Y",
+      "L"
+    ],
+    "( q_check_o, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_p, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_p, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_p, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_p, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_p, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_p, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_p, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_p, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_p, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_p, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_p, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_p, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_p, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_p, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_p, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_p, 'p' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_p, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_p, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_p, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_p, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_p, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_p, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_p, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_p, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_p, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_p, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_p, 'X' )": [
+      "q_check_p",
+      "X",
+      "L"
+    ],
+    "( q_check_p, 'Y' )": [
+      "q_check_p",
+      "Y",
+      "L"
+    ],
+    "( q_check_p, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_q, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_q, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_q, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_q, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_q, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_q, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_q, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_q, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_q, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_q, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_q, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_q, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_q, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_q, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_q, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_q, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_q, 'q' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_q, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_q, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_q, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_q, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_q, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_q, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_q, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_q, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_q, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_q, 'X' )": [
+      "q_check_q",
+      "X",
+      "L"
+    ],
+    "( q_check_q, 'Y' )": [
+      "q_check_q",
+      "Y",
+      "L"
+    ],
+    "( q_check_q, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_r, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_r, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_r, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_r, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_r, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_r, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_r, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_r, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_r, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_r, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_r, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_r, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_r, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_r, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_r, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_r, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_r, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_r, 'r' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_r, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_r, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_r, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_r, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_r, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_r, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_r, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_r, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_r, 'X' )": [
+      "q_check_r",
+      "X",
+      "L"
+    ],
+    "( q_check_r, 'Y' )": [
+      "q_check_r",
+      "Y",
+      "L"
+    ],
+    "( q_check_r, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_s, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_s, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_s, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_s, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_s, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_s, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_s, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_s, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_s, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_s, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_s, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_s, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_s, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_s, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_s, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_s, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_s, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_s, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_s, 's' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_s, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_s, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_s, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_s, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_s, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_s, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_s, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_s, 'X' )": [
+      "q_check_s",
+      "X",
+      "L"
+    ],
+    "( q_check_s, 'Y' )": [
+      "q_check_s",
+      "Y",
+      "L"
+    ],
+    "( q_check_s, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_t, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_t, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_t, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_t, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_t, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_t, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_t, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_t, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_t, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_t, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_t, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_t, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_t, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_t, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_t, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_t, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_t, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_t, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_t, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_t, 't' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_t, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_t, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_t, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_t, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_t, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_t, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_t, 'X' )": [
+      "q_check_t",
+      "X",
+      "L"
+    ],
+    "( q_check_t, 'Y' )": [
+      "q_check_t",
+      "Y",
+      "L"
+    ],
+    "( q_check_t, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_u, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_u, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_u, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_u, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_u, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_u, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_u, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_u, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_u, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_u, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_u, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_u, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_u, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_u, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_u, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_u, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_u, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_u, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_u, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_u, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_u, 'u' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_u, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_u, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_u, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_u, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_u, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_u, 'X' )": [
+      "q_check_u",
+      "X",
+      "L"
+    ],
+    "( q_check_u, 'Y' )": [
+      "q_check_u",
+      "Y",
+      "L"
+    ],
+    "( q_check_u, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_v, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_v, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_v, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_v, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_v, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_v, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_v, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_v, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_v, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_v, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_v, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_v, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_v, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_v, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_v, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_v, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_v, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_v, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_v, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_v, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_v, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_v, 'v' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_v, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_v, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_v, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_v, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_v, 'X' )": [
+      "q_check_v",
+      "X",
+      "L"
+    ],
+    "( q_check_v, 'Y' )": [
+      "q_check_v",
+      "Y",
+      "L"
+    ],
+    "( q_check_v, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_w, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_w, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_w, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_w, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_w, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_w, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_w, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_w, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_w, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_w, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_w, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_w, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_w, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_w, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_w, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_w, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_w, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_w, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_w, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_w, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_w, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_w, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_w, 'w' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_w, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_w, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_w, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_w, 'X' )": [
+      "q_check_w",
+      "X",
+      "L"
+    ],
+    "( q_check_w, 'Y' )": [
+      "q_check_w",
+      "Y",
+      "L"
+    ],
+    "( q_check_w, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_x, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_x, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_x, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_x, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_x, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_x, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_x, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_x, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_x, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_x, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_x, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_x, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_x, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_x, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_x, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_x, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_x, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_x, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_x, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_x, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_x, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_x, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_x, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_x, 'x' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_x, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_x, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_x, 'X' )": [
+      "q_check_x",
+      "X",
+      "L"
+    ],
+    "( q_check_x, 'Y' )": [
+      "q_check_x",
+      "Y",
+      "L"
+    ],
+    "( q_check_x, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_y, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_y, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_y, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_y, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_y, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_y, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_y, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_y, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_y, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_y, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_y, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_y, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_y, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_y, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_y, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_y, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_y, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_y, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_y, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_y, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_y, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_y, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_y, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_y, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_y, 'y' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_y, 'z' )": [
+      "qr",
+      "z",
+      "S"
+    ],
+    "( q_check_y, 'X' )": [
+      "q_check_y",
+      "X",
+      "L"
+    ],
+    "( q_check_y, 'Y' )": [
+      "q_check_y",
+      "Y",
+      "L"
+    ],
+    "( q_check_y, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_check_z, 'a' )": [
+      "qr",
+      "a",
+      "S"
+    ],
+    "( q_check_z, 'b' )": [
+      "qr",
+      "b",
+      "S"
+    ],
+    "( q_check_z, 'c' )": [
+      "qr",
+      "c",
+      "S"
+    ],
+    "( q_check_z, 'd' )": [
+      "qr",
+      "d",
+      "S"
+    ],
+    "( q_check_z, 'e' )": [
+      "qr",
+      "e",
+      "S"
+    ],
+    "( q_check_z, 'f' )": [
+      "qr",
+      "f",
+      "S"
+    ],
+    "( q_check_z, 'g' )": [
+      "qr",
+      "g",
+      "S"
+    ],
+    "( q_check_z, 'h' )": [
+      "qr",
+      "h",
+      "S"
+    ],
+    "( q_check_z, 'i' )": [
+      "qr",
+      "i",
+      "S"
+    ],
+    "( q_check_z, 'j' )": [
+      "qr",
+      "j",
+      "S"
+    ],
+    "( q_check_z, 'k' )": [
+      "qr",
+      "k",
+      "S"
+    ],
+    "( q_check_z, 'l' )": [
+      "qr",
+      "l",
+      "S"
+    ],
+    "( q_check_z, 'm' )": [
+      "qr",
+      "m",
+      "S"
+    ],
+    "( q_check_z, 'n' )": [
+      "qr",
+      "n",
+      "S"
+    ],
+    "( q_check_z, 'o' )": [
+      "qr",
+      "o",
+      "S"
+    ],
+    "( q_check_z, 'p' )": [
+      "qr",
+      "p",
+      "S"
+    ],
+    "( q_check_z, 'q' )": [
+      "qr",
+      "q",
+      "S"
+    ],
+    "( q_check_z, 'r' )": [
+      "qr",
+      "r",
+      "S"
+    ],
+    "( q_check_z, 's' )": [
+      "qr",
+      "s",
+      "S"
+    ],
+    "( q_check_z, 't' )": [
+      "qr",
+      "t",
+      "S"
+    ],
+    "( q_check_z, 'u' )": [
+      "qr",
+      "u",
+      "S"
+    ],
+    "( q_check_z, 'v' )": [
+      "qr",
+      "v",
+      "S"
+    ],
+    "( q_check_z, 'w' )": [
+      "qr",
+      "w",
+      "S"
+    ],
+    "( q_check_z, 'x' )": [
+      "qr",
+      "x",
+      "S"
+    ],
+    "( q_check_z, 'y' )": [
+      "qr",
+      "y",
+      "S"
+    ],
+    "( q_check_z, 'z' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_check_z, 'X' )": [
+      "q_check_z",
+      "X",
+      "L"
+    ],
+    "( q_check_z, 'Y' )": [
+      "q_check_z",
+      "Y",
+      "L"
+    ],
+    "( q_check_z, '_' )": [
+      "qr",
+      "_",
+      "S"
+    ],
+    "( q_back, 'X' )": [
+      "q_back",
+      "X",
+      "L"
+    ],
+    "( q_back, 'Y' )": [
+      "q_back",
+      "Y",
+      "L"
+    ],
+    "( q_back, 'a' )": [
+      "q_back",
+      "a",
+      "L"
+    ],
+    "( q_back, 'b' )": [
+      "q_back",
+      "b",
+      "L"
+    ],
+    "( q_back, 'c' )": [
+      "q_back",
+      "c",
+      "L"
+    ],
+    "( q_back, 'd' )": [
+      "q_back",
+      "d",
+      "L"
+    ],
+    "( q_back, 'e' )": [
+      "q_back",
+      "e",
+      "L"
+    ],
+    "( q_back, 'f' )": [
+      "q_back",
+      "f",
+      "L"
+    ],
+    "( q_back, 'g' )": [
+      "q_back",
+      "g",
+      "L"
+    ],
+    "( q_back, 'h' )": [
+      "q_back",
+      "h",
+      "L"
+    ],
+    "( q_back, 'i' )": [
+      "q_back",
+      "i",
+      "L"
+    ],
+    "( q_back, 'j' )": [
+      "q_back",
+      "j",
+      "L"
+    ],
+    "( q_back, 'k' )": [
+      "q_back",
+      "k",
+      "L"
+    ],
+    "( q_back, 'l' )": [
+      "q_back",
+      "l",
+      "L"
+    ],
+    "( q_back, 'm' )": [
+      "q_back",
+      "m",
+      "L"
+    ],
+    "( q_back, 'n' )": [
+      "q_back",
+      "n",
+      "L"
+    ],
+    "( q_back, 'o' )": [
+      "q_back",
+      "o",
+      "L"
+    ],
+    "( q_back, 'p' )": [
+      "q_back",
+      "p",
+      "L"
+    ],
+    "( q_back, 'q' )": [
+      "q_back",
+      "q",
+      "L"
+    ],
+    "( q_back, 'r' )": [
+      "q_back",
+      "r",
+      "L"
+    ],
+    "( q_back, 's' )": [
+      "q_back",
+      "s",
+      "L"
+    ],
+    "( q_back, 't' )": [
+      "q_back",
+      "t",
+      "L"
+    ],
+    "( q_back, 'u' )": [
+      "q_back",
+      "u",
+      "L"
+    ],
+    "( q_back, 'v' )": [
+      "q_back",
+      "v",
+      "L"
+    ],
+    "( q_back, 'w' )": [
+      "q_back",
+      "w",
+      "L"
+    ],
+    "( q_back, 'x' )": [
+      "q_back",
+      "x",
+      "L"
+    ],
+    "( q_back, 'y' )": [
+      "q_back",
+      "y",
+      "L"
+    ],
+    "( q_back, 'z' )": [
+      "q_back",
+      "z",
+      "L"
+    ],
+    "( q_back, '_' )": [
+      "q0",
+      "_",
+      "R"
+    ]
+  }
 }

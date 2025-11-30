@@ -1,9 +1,11 @@
+
 {
   "modo": "GRAMATICA_REGULAR",
+  "descripcion": "Gramática Regular que genera cadenas sobre {a,b} que terminan en una sola 'b'. L = {b, ab, aab, aaab, ...}",
   "simbolo_inicial": "S",
+  "alfabeto": ["a", "b"],
+  "max_pasos": 1000,
   "producciones": {
-    "S": ["aA"],
-    "A": ["aA", "bA", "b"]
-  },
-  "entrada": "aabab"
+    "S": ["aS", "b"]
+  }
 }

@@ -1,8 +1,13 @@
 {
   "modo": "GLC",
+  "descripcion": "GLC en Forma Normal de Chomsky para a^n b^n. Todas las producciones son A→BC o A→a",
   "simbolo_inicial": "S",
+  "alfabeto": ["a", "b"],
+  "max_pasos": 150,
   "producciones": {
-    "S": ["aSa", "bSb", "a", "b", "epsilon"]
-  },
-  "entrada": "abba"
+    "S": ["AB", "AC", "epsilon"],
+    "A": ["a"],
+    "B": ["b"],
+    "C": ["SB"]
+  }
 }

@@ -1,22 +1,19 @@
+
 {
   "modo": "AFD",
+  "descripcion": "AFD que acepta cadenas con número PAR de 'a's sobre el alfabeto {a, b}",
   "alfabeto": ["a", "b"],
-  "estados": ["q0", "q1", "q2"],
+  "estados": ["q0", "q1"],
   "estado_inicial": "q0",
-  "estados_finales": ["q2"],
+  "estados_finales": ["q0"],
   "transiciones": {
     "q0": {
       "a": "q1",
       "b": "q0"
     },
     "q1": {
-      "a": "q1",
-      "b": "q2"
-    },
-    "q2": {
-      "a": "q1",
-      "b": "q0"
+      "a": "q0",
+      "b": "q1"
     }
-  },
-  "entrada": "aaab"
+  }
 }
