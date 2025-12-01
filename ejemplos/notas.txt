@@ -81,29 +81,32 @@ GLC
 
 
 Gramatica Regular
-
 {
-  "modo": "GRAMATICA_REGULAR",
-  "descripcion": "Gramática Regular que genera cadenas sobre {a,b} que terminan en 'b'. L = {b, ab, aab, bb, aaab, ...}",
-  "simbolo_inicial": "S",
-  "alfabeto": ["a", "b"],
-  "max_pasos": 150,
-  "producciones": {
-    "S": ["aS", "b"]
-  }
-}
+        "modo": "GRAMATICA_REGULAR",
+        "descripcion": "Gramática Regular que acepta cadenas con número PAR de 0's sobre {0,1}. L = {ε, 1, 00, 11, 0011, 0110, ...}",
+        "simbolo_inicial": "S",
+        "alfabeto": ["0", "1"],
+        "max_pasos": 150,
+        "producciones": {
+            "S": ["0A", "1S", "epsilon"],
+            "A": ["0S", "1A"]
+        }
+    }
 
-{
-  "modo": "GRAMATICA_REGULAR",
-  "descripcion": "Gramática Regular que acepta cadenas con número PAR de 0's sobre {0,1}. L = {ε, 1, 00, 11, 0011, 0110, ...}",
-  "simbolo_inicial": "S",
-  "alfabeto": ["0", "1"],
-  "max_pasos": 150,
-  "producciones": {
-    "S": ["0A", "1S", "epsilon"],
-    "A": ["0S", "1A"]
-  }
-}
+
+ {
+        "modo": "GRAMATICA_REGULAR",
+        "descripcion": "Gramática Regular que genera cadenas sobre {a,b} que terminan en 'b'. L = {b, ab, aab, bb, aaab, ...}",
+        "simbolo_inicial": "S",
+        "alfabeto": ["a", "b"],
+        "max_pasos": 150,
+        "producciones": {
+            "S": ["aS", "b"]
+        }
+    }
+
+
+
 
 
 

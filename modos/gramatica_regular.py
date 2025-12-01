@@ -9,6 +9,7 @@ Las gramáticas regulares tienen producciones de la forma:
 
 NOTA: Para epsilon usa "epsilon", "eps", "e", "ε" o "" (cadena vacía)
 """
+from collections import deque
 
 class ModoGramaticaRegular:
     
@@ -48,101 +49,187 @@ class ModoGramaticaRegular:
         """Verifica si un símbolo es terminal (no está en producciones)"""
         return simbolo not in self.producciones
     
-    def derivar(self, actual, objetivo, pasos=0, historial=None, visitados=None):
+    def derivar_bfs(self, objetivo):
         """
-        Intenta derivar la cadena objetivo desde la cadena actual.
-        Retorna True si tiene éxito, guardando la ruta en self.ruta_exitosa
+        Búsqueda BFS (amplitud) para encontrar derivación.
+        Más robusto que DFS para gramáticas regulares.
+        
+        Retorna: (éxito: bool, ruta: list)
         """
-        if historial is None:
-            historial = [actual]
-        if visitados is None:
-            visitados = set()
+        # Cola: (forma_sentencial, historial_completo)
+        cola = deque([(self.simbolo_inicial, [self.simbolo_inicial])])
+        visitados = {self.simbolo_inicial}
+        pasos = 0
         
-        # Caso base: se logró derivar el objetivo
-        if actual == objetivo:
-            self.ruta_exitosa = historial.copy()
-            return True
-        
-        # Detectar bucles
-        estado = (actual, pasos)
-        if estado in visitados:
-            return False
-        visitados.add(estado)
-        
-        # Límite de pasos
-        if pasos >= self.max_pasos:
-            return False
-        
-        # Poda: si la cadena actual es más larga que el objetivo
-        if len(actual) > len(objetivo):
-            return False
-        
-        # Intentar expandir el primer no-terminal de izquierda a derecha
-        for i, simbolo in enumerate(actual):
-            if simbolo in self.producciones:
-                # Probar cada producción
-                for produccion in self.producciones[simbolo]:
-                    # Manejar epsilon
-                    if self.es_epsilon(produccion):
-                        nueva = actual[:i] + actual[i+1:]
-                    else:
-                        nueva = actual[:i] + produccion + actual[i+1:]
+        while cola and pasos < self.max_pasos:
+            actual, historial = cola.popleft()
+            pasos += 1
+            
+            # ¿Alcanzamos el objetivo?
+            if actual == objetivo:
+                return True, historial
+            
+            # Poda inteligente: si ya tenemos más terminales consumidos que el objetivo
+            terminales_actuales = self._contar_terminales(actual)
+            if terminales_actuales > len(objetivo):
+                continue
+            
+            # Expandir: buscar el primer (o único) no-terminal
+            expandido = False
+            for i, simbolo in enumerate(actual):
+                if simbolo in self.producciones:
+                    # Expandir este no-terminal con todas sus producciones
+                    for produccion in self.producciones[simbolo]:
+                        # Aplicar la producción
+                        if self.es_epsilon(produccion):
+                            # A → ε: eliminar el no-terminal
+                            nueva = actual[:i] + actual[i+1:]
+                        else:
+                            # A → α: reemplazar el no-terminal
+                            nueva = actual[:i] + produccion + actual[i+1:]
+                        
+                        # Evitar ciclos
+                        if nueva not in visitados:
+                            visitados.add(nueva)
+                            nuevo_historial = historial + [nueva]
+                            cola.append((nueva, nuevo_historial))
                     
-                    # Recursión con historial
-                    nuevo_historial = historial + [nueva]
-                    if self.derivar(nueva, objetivo, pasos + 1, nuevo_historial, visitados):
-                        return True
-                
-                # En gramáticas regulares, solo expandimos el primer no-terminal
-                # Si no funcionó ninguna producción, retornamos False
-                return False
+                    expandido = True
+                    # En gramáticas lineales derechas, solo expandimos el primer no-terminal
+                    break
+            
+            # Si no hay no-terminales y no coincide, es una rama muerta
+            if not expandido and actual != objetivo:
+                continue
         
-        # Si no hay más no-terminales y no coincide con el objetivo
-        return False
+        return False, []
+    
+    def _contar_terminales(self, cadena):
+        """Cuenta cuántos símbolos terminales hay en la cadena"""
+        count = 0
+        for simbolo in cadena:
+            if simbolo not in self.producciones:
+                count += 1
+        return count
+    
+    def derivar_dfs_mejorado(self, objetivo):
+        """
+        DFS mejorado con mejor poda y detección de ciclos.
+        Alternativa más rápida para algunas gramáticas.
+        """
+        
+        def dfs_recursivo(actual, historial, visitados, profundidad):
+            # Límite de profundidad
+            if profundidad > self.max_pasos:
+                return False, []
+            
+            # ¿Éxito?
+            if actual == objetivo:
+                return True, historial
+            
+            # Estado para evitar ciclos infinitos
+            estado = (actual, profundidad % 50)  # Módulo para limitar memoria
+            if estado in visitados:
+                return False, []
+            visitados.add(estado)
+            
+            # Poda: si ya excedimos la longitud objetivo con solo terminales
+            if self._solo_terminales(actual) and len(actual) != len(objetivo):
+                return False, []
+            
+            # Buscar primer no-terminal
+            for i, simbolo in enumerate(actual):
+                if simbolo in self.producciones:
+                    # Probar cada producción
+                    for produccion in self.producciones[simbolo]:
+                        # Aplicar producción
+                        if self.es_epsilon(produccion):
+                            nueva = actual[:i] + actual[i+1:]
+                        else:
+                            nueva = actual[:i] + produccion + actual[i+1:]
+                        
+                        # Poda: no crecer indefinidamente
+                        if len(nueva) > len(objetivo) + 10:
+                            continue
+                        
+                        # Recursión
+                        nuevo_historial = historial + [nueva]
+                        exito, ruta = dfs_recursivo(nueva, nuevo_historial, visitados.copy(), profundidad + 1)
+                        if exito:
+                            return True, ruta
+                    
+                    # Solo expandir el primer no-terminal
+                    return False, []
+            
+            # No hay más no-terminales
+            return False, []
+        
+        return dfs_recursivo(self.simbolo_inicial, [self.simbolo_inicial], set(), 0)
+    
+    def _solo_terminales(self, cadena):
+        """Verifica si la cadena solo contiene terminales"""
+        for simbolo in cadena:
+            if simbolo in self.producciones:
+                return False
+        return True
     
     def _mostrar_producciones(self):
         """Muestra todas las producciones de la gramática"""
         print("\n📐 Producciones de la gramática regular:")
         print("─" * 50)
         for no_terminal, prods in self.producciones.items():
+            prod_strs = []
             for prod in prods:
                 prod_mostrar = prod if not self.es_epsilon(prod) else "ε"
-                print(f"  {no_terminal} → {prod_mostrar}")
+                prod_strs.append(prod_mostrar)
+            print(f"  {no_terminal} → {' | '.join(prod_strs)}")
         print("─" * 50)
     
     def ejecutar(self):
         """Ejecuta la simulación de la gramática regular"""
         print(f"\n📝 Descripción: {self.descripcion}")
         print(f"🎯 Símbolo inicial: {self.simbolo_inicial}")
-        print(f"📥 Cadena objetivo: '{self.entrada}' (longitud: {len(self.entrada)})")
+        
+        # Mostrar cadena objetivo (manejar epsilon)
+        if self.entrada == "":
+            print(f"📥 Cadena objetivo: 'ε' (cadena vacía)")
+        else:
+            print(f"📥 Cadena objetivo: '{self.entrada}' (longitud: {len(self.entrada)})")
         
         # Mostrar producciones
         self._mostrar_producciones()
         
-        # Reiniciar ruta exitosa
-        self.ruta_exitosa = []
-        
         print(f"\n{'─'*50}")
-        print("Buscando derivación...")
+        print("Buscando derivación con BFS...")
         print(f"{'─'*50}")
         
-        # Intentar derivar
-        if self.derivar(self.simbolo_inicial, self.entrada):
+        # Intentar derivar con BFS (más robusto)
+        exito, ruta = self.derivar_bfs(self.entrada)
+        
+        # Si BFS falla, intentar con DFS mejorado
+        if not exito:
+            print("\n🔄 Intentando con DFS mejorado...")
+            exito, ruta = self.derivar_dfs_mejorado(self.entrada)
+        
+        if exito:
+            self.ruta_exitosa = ruta
             print("\n✅ La cadena PERTENECE al lenguaje generado ✅")
-            print(f"\n🔍 Derivación encontrada ({len(self.ruta_exitosa)} pasos):")
+            print(f"\n🔍 Derivación encontrada ({len(ruta)} pasos):")
             print("─" * 50)
             
-            for i, paso in enumerate(self.ruta_exitosa):
+            for i, paso in enumerate(ruta):
                 paso_mostrar = paso if paso != "" else "ε"
                 
                 if i == 0:
                     print(f"  Paso {i}: {paso_mostrar} (inicio)")
-                elif i == len(self.ruta_exitosa) - 1:
+                elif i == len(ruta) - 1:
                     print(f"  Paso {i}: {paso_mostrar} ✓ (objetivo alcanzado)")
                 else:
                     print(f"  Paso {i}: {paso_mostrar}")
             
             print("─" * 50)
+            return True
         else:
             print(f"\n❌ La cadena NO pertenece al lenguaje")
             print(f"   (Se alcanzó el límite de {self.max_pasos} pasos o no hay derivación posible)")
+            return False

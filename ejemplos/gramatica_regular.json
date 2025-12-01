@@ -1,11 +1,11 @@
-
 {
   "modo": "GRAMATICA_REGULAR",
-  "descripcion": "Gramática Regular que genera cadenas sobre {a,b} que terminan en una sola 'b'. L = {b, ab, aab, aaab, ...}",
+  "descripcion": "Gramática Regular que acepta cadenas con número PAR de 0's sobre {0,1}. L = {ε, 1, 00, 11, 0011, 0110, ...}",
   "simbolo_inicial": "S",
-  "alfabeto": ["a", "b"],
-  "max_pasos": 1000,
+  "alfabeto": ["0", "1"],
+  "max_pasos": 150,
   "producciones": {
-    "S": ["aS", "b"]
+    "S": ["0A", "1S", "epsilon"],
+    "A": ["0S", "1A"]
   }
 }
